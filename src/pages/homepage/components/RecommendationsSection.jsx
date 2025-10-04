@@ -56,12 +56,28 @@ const RecommendationsSection = () => {
                 </blockquote>
 
                 {/* Author */}
-                <div className="relative z-10">
-                  <div className="font-bold text-text-primary mb-1">
-                    {testimonial?.name}
-                  </div>
-                  <div className="text-conversion text-sm font-medium">
-                    {testimonial?.title}
+                <div className="relative z-10 flex items-center space-x-3">
+                  {testimonial?.name === "Kevin Martin See" && (
+                    <img
+                      src="/assets/logos/ibm.svg"
+                      alt="IBM Logo"
+                      className="w-6 h-6"
+                    />
+                  )}
+                  {testimonial?.name === "Terrence L. Black" && (
+                    <img
+                      src="/assets/logos/resq-organics.png"
+                      alt="ResQ Organics Logo"
+                      className="w-6 h-6"
+                    />
+                  )}
+                  <div>
+                    <div className="font-bold text-text-primary mb-1">
+                      {testimonial?.name}
+                    </div>
+                    <div className="text-conversion text-sm font-medium">
+                      {testimonial?.title}
+                    </div>
                   </div>
                 </div>
 

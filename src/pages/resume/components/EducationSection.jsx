@@ -13,7 +13,8 @@ const EducationSection = () => {
       achievement: {
         title: "Target Marketing Competition Winner (2006)",
         description: "Led a team to first place in a university-wide competition by developing an innovative marketing strategy that was recognized by a panel of industry judges."
-      }
+      },
+      logo: "/assets/logos/indiana-university.png"
     }
   ];
 
@@ -84,13 +85,21 @@ const EducationSection = () => {
             <div key={edu?.id} className="relative">
               {/* Timeline Dot */}
               <div className="absolute left-4 top-6 w-4 h-4 bg-trust-builder rounded-full border-2 border-background"></div>
-              
+
               {/* Content */}
               <div className="ml-16">
                 <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-6">
                   <div className="flex-1">
                     <h3 className="text-xl font-semibold text-text-primary mb-2">{edu?.degree}</h3>
                     <div className="flex items-center space-x-4 text-text-secondary mb-4">
+                      {edu?.logo && (
+                        <img
+                          src={edu?.logo}
+                          alt={`${edu?.school} logo`}
+                          className="w-6 h-6"
+                          style={{ filter: 'brightness(0) invert(1)' }}
+                        />
+                      )}
                       <span className="font-medium text-trust-builder text-lg">{edu?.school}</span>
                       <span className="flex items-center space-x-1">
                         <Icon name="MapPin" size={14} />
@@ -106,7 +115,7 @@ const EducationSection = () => {
                     {/* Indiana University Logo */}
                     <div className="w-20 h-20 lg:w-24 lg:h-24 flex items-center justify-center bg-white rounded-lg border-2 border-trust-builder/20 p-2">
                       <Image
-                        src="/assets/images/Indiana_University_seal.svg-1759610505683.png"
+                        src={edu?.logo}
                         alt="Indiana University Logo"
                         className="w-full h-full object-contain"
                       />
@@ -156,7 +165,7 @@ const EducationSection = () => {
                   <Icon name="Award" size={20} className="text-cta-warm" />
                 </div>
               </div>
-              
+
               <div className="space-y-2">
                 <div className="flex items-center space-x-2 text-sm text-text-secondary">
                   <Icon name="Hash" size={14} />

@@ -11,6 +11,7 @@ const ExperienceSection = () => {
       duration: "Aug 2023 – Present",
       type: "Full-time",
       logo: "/assets/images/GT_Logo_RGB-1759610986907.png",
+      screenshot: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop",
       achievements: [
         "Led a full-stack digital transformation for a national healthcare education platform, operating as both brand strategist and systems architect to build a scalable marketing ecosystem from the ground up",
         "Automation & AI: Architected a 'Guardian' AI assistant and over 400 automated workflows, reducing manual data entry by hours per week and decreasing support tickets by 70%",
@@ -28,6 +29,7 @@ const ExperienceSection = () => {
       location: "Fishers, IN",
       duration: "Mar 2023 – Jul 2023",
       type: "Full-time",
+      logo: "/assets/logos/utg.png",
       achievements: [
         "Stabilized marketing operations during a critical leadership transition",
         "Streamlined lead generation workflows, improved GTM tracking, and implemented new CRM efficiencies that resulted in a 40% improvement in campaign production timelines"
@@ -41,6 +43,8 @@ const ExperienceSection = () => {
       location: "Indianapolis, IN",
       duration: "Jun 2015 – Mar 2023",
       type: "Full-time",
+      logo: "/assets/logos/rbe.png",
+      screenshot: "/assets/images/experience/rileybennett egloff/attorneys.jpg",
       achievements: [
         "Directed a decade of marketing evolution, from traditional outreach to a fully digital operation",
         "Led a comprehensive firm-wide digital rebrand and technical SEO overhaul that directly resulted in a 35% increase in qualified client inquiries",
@@ -70,6 +74,7 @@ const ExperienceSection = () => {
       location: "Indianapolis, IN",
       duration: "Sep 2009 – Jun 2013",
       type: "Full-time",
+      screenshot: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=300&fit=crop",
       achievements: [
         "Directed all marketing initiatives, delivering an average of 45% growth in patient visits over a three-year period while consistently maintaining a positive ROI",
         "Digital Product Launch: Led the design, development, and marketing strategy for the UrgentCare Indy website, a new division of the company, building its digital presence from the ground up",
@@ -94,10 +99,10 @@ const ExperienceSection = () => {
             {index !== experiences?.length - 1 && (
               <div className="absolute left-6 top-16 w-0.5 h-full bg-border"></div>
             )}
-            
+
             {/* Timeline Dot */}
             <div className="absolute left-4 top-6 w-4 h-4 bg-conversion rounded-full border-2 border-background"></div>
-            
+
             {/* Content */}
             <div className="ml-16">
               <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4">
@@ -105,10 +110,11 @@ const ExperienceSection = () => {
                   <div className="flex items-start space-x-3 mb-3">
                     {exp?.logo ? (
                       <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center flex-shrink-0 p-2 border border-border">
-                        <img 
+                        <img
                           src={exp?.logo}
                           alt={`${exp?.company} logo`}
                           className="w-full h-full object-contain"
+                          style={{ filter: 'brightness(0) invert(1)' }}
                         />
                       </div>
                     ) : (
@@ -134,6 +140,17 @@ const ExperienceSection = () => {
                   <span className="font-medium">{exp?.duration}</span>
                 </div>
               </div>
+
+              {/* Website Screenshot */}
+              {exp?.screenshot && (
+                <div className="mb-4">
+                  <img
+                    src={exp?.screenshot}
+                    alt={`${exp?.company} website screenshot`}
+                    className="w-48 h-32 object-cover rounded-lg border border-border hover:scale-105 transition-transform cursor-pointer"
+                  />
+                </div>
+              )}
 
               {/* Achievements */}
               <div className="mb-6">

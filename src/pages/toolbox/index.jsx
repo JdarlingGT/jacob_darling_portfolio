@@ -184,36 +184,36 @@ const Toolbox = () => {
 
   const techStack = {
     'Edge & Infrastructure': [
-      'Cloudflare (WAF, CDN, Rate Limiting, Bot Management)',
-      'DNSSEC',
-      'Netdata'
+      { name: 'Cloudflare (WAF, CDN, Rate Limiting, Bot Management)', logo: '/assets/logos/cloudflare.svg' },
+      { name: 'DNSSEC', logo: null },
+      { name: 'Netdata', logo: '/assets/logos/netdata.svg' }
     ],
     'Tracking & Analytics': [
-      'Google Analytics 4',
-      'Google Tag Manager',
-      'Server-Pushed dataLayer Events'
+      { name: 'Google Analytics 4', logo: '/assets/logos/google-analytics.svg' },
+      { name: 'Google Tag Manager', logo: '/assets/logos/google-tag-manager.svg' },
+      { name: 'Server-Pushed dataLayer Events', logo: null }
     ],
     'WordPress Core & Ecosystem': [
-      'WooCommerce (Subscriptions/Bundles)',
-      'LearnDash',
-      'Gravity Forms (+ Advanced Post Creation, Stripe, Quiz)',
-      'WP Fusion',
-      'FluentCRM',
-      'Uncanny Automator',
-      'Divi',
-      'Advanced Custom Fields (ACF)'
+      { name: 'WooCommerce (Subscriptions/Bundles)', logo: '/assets/logos/woocommerce.svg' },
+      { name: 'LearnDash', logo: '/assets/logos/learndash.png' },
+      { name: 'Gravity Forms (+ Advanced Post Creation, Stripe, Quiz)', logo: null },
+      { name: 'WP Fusion', logo: '/assets/logos/wp-fusion.png' },
+      { name: 'FluentCRM', logo: '/assets/logos/fluentcrm.png' },
+      { name: 'Uncanny Automator', logo: null },
+      { name: 'Divi', logo: null },
+      { name: 'Advanced Custom Fields (ACF)', logo: null }
     ],
     'Build & Operations': [
-      'Git',
-      'WP-CLI',
-      'SQL',
-      'VS Code'
+      { name: 'Git', logo: null },
+      { name: 'WP-CLI', logo: null },
+      { name: 'SQL', logo: '/assets/logos/sql.png' },
+      { name: 'VS Code', logo: null }
     ],
     'Languages': [
-      'PHP',
-      'JavaScript',
-      'SQL',
-      'HTML/CSS'
+      { name: 'PHP', logo: '/assets/logos/php.svg' },
+      { name: 'JavaScript', logo: '/assets/logos/javascript.png' },
+      { name: 'SQL', logo: '/assets/logos/sql.png' },
+      { name: 'HTML/CSS', logo: null }
     ]
   };
 
@@ -233,7 +233,7 @@ const Toolbox = () => {
                 Tools I <span className="text-accent">Reach For</span>
               </h1>
               <p className="text-xl text-text-secondary max-w-2xl leading-relaxed mb-8">
-                A comprehensive, scannable overview of my technical expertise and professional capabilities. 
+                A comprehensive, scannable overview of my technical expertise and professional capabilities.
                 From strategy and architecture to problem-solving and scalable marketing systems.
               </p>
               <div className="flex flex-wrap gap-4">
@@ -301,7 +301,7 @@ const Toolbox = () => {
                   What I'm hired to do. These are the foundational capabilities that drive results and solve complex technical challenges.
                 </p>
               </div>
-              
+
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {coreStrengths?.map((strength) => (
                   <div
@@ -335,7 +335,7 @@ const Toolbox = () => {
                         </span>
                       ))}
                     </div>
-                    
+
                     {/* Click indicator */}
                     <div className="absolute top-4 right-4 opacity-60 hover:opacity-100 smooth-transition">
                       <Icon name="ExternalLink" size={16} className="text-accent" />
@@ -357,7 +357,7 @@ const Toolbox = () => {
                   From problem to impact. Real examples of technical problem-solving that showcase strategic thinking and execution.
                 </p>
               </div>
-              
+
               <div className="space-y-8">
                 {technicalSpotlights?.map((spotlight) => (
                   <div
@@ -374,7 +374,7 @@ const Toolbox = () => {
                         </h3>
                       </div>
                     </div>
-                    
+
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                       <div className="space-y-2">
                         <h4 className="font-semibold text-red-500 flex items-center space-x-2">
@@ -421,7 +421,7 @@ const Toolbox = () => {
                   Repeatable solutions for complex problems. Strategic frameworks that demonstrate maturity and scalable thinking.
                 </p>
               </div>
-              
+
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {playbooks?.map((playbook) => (
                   <div
@@ -441,7 +441,7 @@ const Toolbox = () => {
                     <p className="text-muted-foreground leading-relaxed mb-6">
                       {playbook?.description}
                     </p>
-                    
+
                     <button
                       onClick={() => setExpandedPlaybook(expandedPlaybook === playbook?.id ? null : playbook?.id)}
                       className="flex items-center space-x-2 text-accent hover:text-accent/80 smooth-transition text-sm font-medium"
@@ -449,7 +449,7 @@ const Toolbox = () => {
                       <span>{expandedPlaybook === playbook?.id ? 'Hide Steps' : 'View Steps'}</span>
                       <Icon name={expandedPlaybook === playbook?.id ? 'ChevronUp' : 'ChevronDown'} size={16} />
                     </button>
-                    
+
                     {expandedPlaybook === playbook?.id && (
                       <div className="mt-4 pt-4 border-t border-border">
                         <div className="space-y-3">
@@ -481,7 +481,7 @@ const Toolbox = () => {
                   Tools I reach for. A comprehensive, scannable list of my technical toolkit across all areas of expertise.
                 </p>
               </div>
-              
+
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {Object.entries(techStack)?.map(([category, tools]) => (
                   <div
@@ -495,11 +495,20 @@ const Toolbox = () => {
                     <div className="space-y-3">
                       {tools?.map((tool) => (
                         <div
-                          key={tool}
-                          className="flex items-center space-x-3 p-3 rounded-lg bg-muted/30 hover:bg-muted/50 smooth-transition"
+                          key={tool.name}
+                          className="flex items-center space-x-3 p-3 rounded-lg bg-muted/30 hover:bg-muted/50 smooth-transition group"
                         >
-                          <Icon name="Check" size={16} className="text-green-500 flex-shrink-0" />
-                          <span className="text-muted-foreground">{tool}</span>
+                          {tool.logo ? (
+                            <img
+                              src={tool.logo}
+                              alt={`${tool.name} logo`}
+                              className="w-6 h-6 group-hover:brightness-110 transition-all"
+                              style={{ filter: 'brightness(0) invert(1)' }}
+                            />
+                          ) : (
+                            <Icon name="Check" size={16} className="text-green-500 flex-shrink-0" />
+                          )}
+                          <span className="text-muted-foreground group-hover:text-muted-foreground/80 transition-all">{tool.name}</span>
                         </div>
                       ))}
                     </div>
@@ -558,17 +567,17 @@ const Toolbox = () => {
                   <Icon name="X" size={20} />
                 </button>
               </div>
-              
+
               <div className="space-y-6">
                 <div>
                   <h4 className="font-semibold text-card-foreground mb-3">Professional Summary</h4>
                   <p className="text-muted-foreground leading-relaxed">
-                    Marketing technology leader specializing in bridging strategic vision with technical execution. 
-                    Expert in performance optimization, security implementation, analytics engineering, and marketing automation architecture. 
+                    Marketing technology leader specializing in bridging strategic vision with technical execution.
+                    Expert in performance optimization, security implementation, analytics engineering, and marketing automation architecture.
                     Proven track record of transforming complex technical challenges into scalable, revenue-focused solutions.
                   </p>
                 </div>
-                
+
                 <div>
                   <h4 className="font-semibold text-card-foreground mb-3">Core Expertise</h4>
                   <div className="flex flex-wrap gap-2">
@@ -582,7 +591,7 @@ const Toolbox = () => {
                     ))}
                   </div>
                 </div>
-                
+
                 <div className="pt-4 border-t border-border">
                   <div className="flex space-x-4">
                     <Button

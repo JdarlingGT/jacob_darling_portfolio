@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="https://gmpg.org/xfn/11">
+
+<title>404 - Page not found | WP Fusion</title>
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	<meta name="robots" content="follow, noindex">
+<link rel='dns-prefetch' href='//wpfusion.com' />
+<link rel='dns-prefetch' href='//js.stripe.com' />
+<link rel='dns-prefetch' href='//use.fontawesome.com' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="WP Fusion &raquo; Feed" href="https://wpfusion.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="WP Fusion &raquo; Comments Feed" href="https://wpfusion.com/comments/feed/" />
+		<!-- This site uses the Google Analytics by MonsterInsights plugin v9.6.0 - Using Analytics tracking - https://www.monsterinsights.com/ -->
+							<script src="//www.googletagmanager.com/gtag/js?id=G-90LWC1TJNP"  data-cfasync="false" data-wpfc-render="false" async></script>
+			<script data-cfasync="false" data-wpfc-render="false">
+				var mi_version = '9.6.0';
+				var mi_track_user = true;
+				var mi_no_track_reason = '';
+								var MonsterInsightsDefaultLocations = {"page_location":"https:\/\/wpfusion.com\/wp-content\/uploads\/2020\/05\/wpfusion-logo.png\/"};
+								if ( typeof MonsterInsightsPrivacyGuardFilter === 'function' ) {
+					var MonsterInsightsLocations = (typeof MonsterInsightsExcludeQuery === 'object') ? MonsterInsightsPrivacyGuardFilter( MonsterInsightsExcludeQuery ) : MonsterInsightsPrivacyGuardFilter( MonsterInsightsDefaultLocations );
+				} else {
+					var MonsterInsightsLocations = (typeof MonsterInsightsExcludeQuery === 'object') ? MonsterInsightsExcludeQuery : MonsterInsightsDefaultLocations;
+				}
+
+								var disableStrs = [
+										'ga-disable-G-90LWC1TJNP',
+									];
+
+				/* Function to detect opted out users */
+				function __gtagTrackerIsOptedOut() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						if (document.cookie.indexOf(disableStrs[index] + '=true') > -1) {
+							return true;
+						}
+					}
+
+					return false;
+				}
+
+				/* Disable tracking if the opt-out cookie exists. */
+				if (__gtagTrackerIsOptedOut()) {
+					for (var index = 0; index < disableStrs.length; index++) {
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				/* Opt-out function */
+				function __gtagTrackerOptout() {
+					for (var index = 0; index < disableStrs.length; index++) {
+						document.cookie = disableStrs[index] + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+						window[disableStrs[index]] = true;
+					}
+				}
+
+				if ('undefined' === typeof gaOptout) {
+					function gaOptout() {
+						__gtagTrackerOptout();
+					}
+				}
+								window.dataLayer = window.dataLayer || [];
+
+				window.MonsterInsightsDualTracker = {
+					helpers: {},
+					trackers: {},
+				};
+				if (mi_track_user) {
+					function __gtagDataLayer() {
+						dataLayer.push(arguments);
+					}
+
+					function __gtagTracker(type, name, parameters) {
+						if (!parameters) {
+							parameters = {};
+						}
+
+						if (parameters.send_to) {
+							__gtagDataLayer.apply(null, arguments);
+							return;
+						}
+
+						if (type === 'event') {
+														parameters.send_to = monsterinsights_frontend.v4_id;
+							var hookName = name;
+							if (typeof parameters['event_category'] !== 'undefined') {
+								hookName = parameters['event_category'] + ':' + name;
+							}
+
+							if (typeof MonsterInsightsDualTracker.trackers[hookName] !== 'undefined') {
+								MonsterInsightsDualTracker.trackers[hookName](parameters);
+							} else {
+								__gtagDataLayer('event', name, parameters);
+							}
+							
+						} else {
+							__gtagDataLayer.apply(null, arguments);
+						}
+					}
+
+					__gtagTracker('js', new Date());
+					__gtagTracker('set', {
+						'developer_id.dZGIzZG': true,
+											});
+					if ( MonsterInsightsLocations.page_location ) {
+						__gtagTracker('set', MonsterInsightsLocations);
+					}
+										__gtagTracker('config', 'G-90LWC1TJNP', {"forceSSL":"true","link_attribution":"true","page_path":'\/404.html?page=' + document.location.pathname + document.location.search + '&from=' + document.referrer} );
+															window.gtag = __gtagTracker;										(function () {
+						/* https://developers.google.com/analytics/devguides/collection/analyticsjs/ */
+						/* ga and __gaTracker compatibility shim. */
+						var noopfn = function () {
+							return null;
+						};
+						var newtracker = function () {
+							return new Tracker();
+						};
+						var Tracker = function () {
+							return null;
+						};
+						var p = Tracker.prototype;
+						p.get = noopfn;
+						p.set = noopfn;
+						p.send = function () {
+							var args = Array.prototype.slice.call(arguments);
+							args.unshift('send');
+							__gaTracker.apply(null, args);
+						};
+						var __gaTracker = function () {
+							var len = arguments.length;
+							if (len === 0) {
+								return;
+							}
+							var f = arguments[len - 1];
+							if (typeof f !== 'object' || f === null || typeof f.hitCallback !== 'function') {
+								if ('send' === arguments[0]) {
+									var hitConverted, hitObject = false, action;
+									if ('event' === arguments[1]) {
+										if ('undefined' !== typeof arguments[3]) {
+											hitObject = {
+												'eventAction': arguments[3],
+												'eventCategory': arguments[2],
+												'eventLabel': arguments[4],
+												'value': arguments[5] ? arguments[5] : 1,
+											}
+										}
+									}
+									if ('pageview' === arguments[1]) {
+										if ('undefined' !== typeof arguments[2]) {
+											hitObject = {
+												'eventAction': 'page_view',
+												'page_path': arguments[2],
+											}
+										}
+									}
+									if (typeof arguments[2] === 'object') {
+										hitObject = arguments[2];
+									}
+									if (typeof arguments[5] === 'object') {
+										Object.assign(hitObject, arguments[5]);
+									}
+									if ('undefined' !== typeof arguments[1].hitType) {
+										hitObject = arguments[1];
+										if ('pageview' === hitObject.hitType) {
+											hitObject.eventAction = 'page_view';
+										}
+									}
+									if (hitObject) {
+										action = 'timing' === arguments[1].hitType ? 'timing_complete' : hitObject.eventAction;
+										hitConverted = mapArgs(hitObject);
+										__gtagTracker('event', action, hitConverted);
+									}
+								}
+								return;
+							}
+
+							function mapArgs(args) {
+								var arg, hit = {};
+								var gaMap = {
+									'eventCategory': 'event_category',
+									'eventAction': 'event_action',
+									'eventLabel': 'event_label',
+									'eventValue': 'event_value',
+									'nonInteraction': 'non_interaction',
+									'timingCategory': 'event_category',
+									'timingVar': 'name',
+									'timingValue': 'value',
+									'timingLabel': 'event_label',
+									'page': 'page_path',
+									'location': 'page_location',
+									'title': 'page_title',
+									'referrer' : 'page_referrer',
+								};
+								for (arg in args) {
+																		if (!(!args.hasOwnProperty(arg) || !gaMap.hasOwnProperty(arg))) {
+										hit[gaMap[arg]] = args[arg];
+									} else {
+										hit[arg] = args[arg];
+									}
+								}
+								return hit;
+							}
+
+							try {
+								f.hitCallback();
+							} catch (ex) {
+							}
+						};
+						__gaTracker.create = newtracker;
+						__gaTracker.getByName = newtracker;
+						__gaTracker.getAll = function () {
+							return [];
+						};
+						__gaTracker.remove = noopfn;
+						__gaTracker.loaded = true;
+						window['__gaTracker'] = __gaTracker;
+					})();
+									} else {
+										console.log("");
+					(function () {
+						function __gtagTracker() {
+							return null;
+						}
+
+						window['__gtagTracker'] = __gtagTracker;
+						window['gtag'] = __gtagTracker;
+					})();
+									}
+			</script>
+				<!-- / Google Analytics by MonsterInsights -->
+				<script data-cfasync="false" data-wpfc-render="false">
+			window.MonsterInsightsDualTracker.helpers.mapProductItem = function (uaItem) {
+				var prefixIndex, prefixKey, mapIndex;
+
+				var toBePrefixed = ['id', 'name', 'list_name', 'brand', 'category', 'variant'];
+
+				var item = {};
+
+				var fieldMap = {
+					'price': 'price',
+					'list_position': 'index',
+					'quantity': 'quantity',
+					'position': 'index',
+				};
+
+				for (mapIndex in fieldMap) {
+					if (uaItem.hasOwnProperty(mapIndex)) {
+						item[fieldMap[mapIndex]] = uaItem[mapIndex];
+					}
+				}
+
+				for (prefixIndex = 0; prefixIndex < toBePrefixed.length; prefixIndex++) {
+					prefixKey = toBePrefixed[prefixIndex];
+					if (typeof uaItem[prefixKey] !== 'undefined') {
+						item['item_' + prefixKey] = uaItem[prefixKey];
+					}
+				}
+
+				return item;
+			};
+
+			MonsterInsightsDualTracker.trackers['view_item_list'] = function (parameters) {
+				var items = parameters.items;
+				var listName, itemIndex, item, itemListName;
+				var lists = {
+					'_': {items: [], 'send_to': monsterinsights_frontend.v4_id},
+				};
+
+				for (itemIndex = 0; itemIndex < items.length; itemIndex++) {
+					item = MonsterInsightsDualTracker.helpers.mapProductItem(items[itemIndex]);
+
+					if (typeof item['item_list_name'] === 'undefined') {
+						lists['_'].items.push(item);
+					} else {
+						itemListName = item['item_list_name'];
+						if (typeof lists[itemListName] === 'undefined') {
+							lists[itemListName] = {
+								'items': [],
+								'item_list_name': itemListName,
+								'send_to': monsterinsights_frontend.v4_id,
+							};
+						}
+
+						lists[itemListName].items.push(item);
+					}
+				}
+
+				for (listName in lists) {
+					__gtagDataLayer('event', 'view_item_list', lists[listName]);
+				}
+			};
+
+			MonsterInsightsDualTracker.trackers['select_content'] = function (parameters) {
+				const items = parameters.items.map(MonsterInsightsDualTracker.helpers.mapProductItem);
+				__gtagDataLayer('event', 'select_item', {items: items, send_to: parameters.send_to});
+			};
+
+			MonsterInsightsDualTracker.trackers['view_item'] = function (parameters) {
+				const items = parameters.items.map(MonsterInsightsDualTracker.helpers.mapProductItem);
+				__gtagDataLayer('event', 'view_item', {items: items, send_to: parameters.send_to});
+			};
+		</script>
+		<link rel='stylesheet' id='astra-child-theme-css-css' href='https://wpfusion.com/wp-content/themes/astra-child/style.css?ver=1.0.125' media='all' />
+<style id='astra-child-theme-css-inline-css'>
+.h2,.h3,h2,h3{margin:30px 0 10px}*{border:0;font-size:100%;font-style:inherit;font-weight:inherit;margin:0;outline:0;padding:0}html{overflow-x:hidden;}html>body{font-family:Sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.8;font-size:18px;color:#737f90}:not( h1,h2,h3,h4,h5,h6,.blob-code,pre ){font-family:"Lota Grotesque",Sans-serif}h1,h1>span,h2,h3,h4,h5,h6{font-family:Geomanist,Sans-serif !important;color:#333;font-weight:600;line-height:1.15}.h1,h1{font-size:3rem}.h2,h2{font-size:1.66rem}.h3,h3{font-size:1.5rem}.h4,h4{margin:40px 0 10px;font-size:1.25rem}h1.elementor-heading-title{font-size:64px}.fa,.far,.fas{font-family:"Font Awesome 5 Free";font-weight:900}.dots-bg{background-image:radial-gradient(circle at center,#ffffff08 2px,transparent 2px),radial-gradient(circle at center,#ffffff08 2px,transparent 2px);background-size:10px 10px}@media (max-width:767px){body{background-image:none!important}svg#blue-blob-bg{display:none}h1.elementor-heading-title,h2.elementor-heading-title{font-size:48px!important;line-height:1.15!important}}body.single-documentation h1.elementor-heading-title{font-size:48px}.entry-content p,p{margin-bottom:.89em}img{vertical-align:middle;height:auto;max-width:100%}a,body a>b,body a>strong{color:#0b328e}table{border-spacing:0}body b,body strong{color:#333;font-weight:600}@media (min-width:767px){.elementor-nav-menu li.menu-item-has-children{padding-right:22px!important}}.elementor-nav-menu .sub-arrow{position:absolute;right:0;display:none}ul.elementor-nav-menu li.menu-item.menu-item-has-children:after{font-family:"Font Awesome 5 Free";font-weight:900;display:inline-block;content:"\f0d7";position:absolute;right:20px;top:50%;margin-top:-8px;color:#000;border:none}.elementor-122311 ul.elementor-nav-menu li.menu-item.menu-item-has-children:after,.elementor-16596 ul.elementor-nav-menu li.menu-item.menu-item-has-children:after,.elementor-18192 ul.elementor-nav-menu li.menu-item.menu-item-has-children:after{color:#fff}
+</style>
+<link rel='stylesheet' id='prism-css' href='https://wpfusion.com/wp-content/themes/astra-child/prism.css?ver=1.0.2' media='all' />
+<style id='font-awesome-svg-styles-default-inline-css'>
+.svg-inline--fa {
+  display: inline-block;
+  height: 1em;
+  overflow: visible;
+  vertical-align: -.125em;
+}
+</style>
+<link rel='stylesheet' id='font-awesome-svg-styles-css' href='https://wpfusion.com/wp-content/uploads/font-awesome/v5.10.1/css/svg-with-js.css' media='all' />
+<style id='font-awesome-svg-styles-inline-css'>
+   .wp-block-font-awesome-icon svg::before,
+   .wp-rich-text-font-awesome-icon svg::before {content: unset;}
+</style>
+<style id='global-styles-inline-css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:root { --wp--style--global--content-size: 740px;--wp--style--global--wide-size: 1140px; }:where(body) { margin: 0; }.wp-site-blocks > .alignleft { float: left; margin-right: 2em; }.wp-site-blocks > .alignright { float: right; margin-left: 2em; }.wp-site-blocks > .aligncenter { justify-content: center; margin-left: auto; margin-right: auto; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}.is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}.is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}.is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}.is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}a:where(:not(.wp-element-button)){text-decoration: underline;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;line-height: inherit;padding: calc(0.667em + 2px) calc(1.333em + 2px);text-decoration: none;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='font-awesome-official-css' href='https://use.fontawesome.com/releases/v5.10.1/css/all.css' media='all' integrity="sha384-wxqG4glGB3nlqX0bi23nmgwCSjWIW13BdLUEYC4VIMehfbcro/ATkyDsF/AbIOVe" crossorigin="anonymous" />
+<link rel='stylesheet' id='elementor-frontend-css' href='https://wpfusion.com/wp-content/uploads/elementor/css/custom-frontend.min.css?ver=1759423084' media='all' />
+<link rel='stylesheet' id='widget-image-css' href='https://wpfusion.com/wp-content/plugins/elementor/assets/css/widget-image.min.css?ver=3.32.3' media='all' />
+<link rel='stylesheet' id='widget-nav-menu-css' href='https://wpfusion.com/wp-content/uploads/elementor/css/custom-pro-widget-nav-menu.min.css?ver=1759423085' media='all' />
+<link rel='stylesheet' id='widget-heading-css' href='https://wpfusion.com/wp-content/plugins/elementor/assets/css/widget-heading.min.css?ver=3.32.3' media='all' />
+<link rel='stylesheet' id='widget-spacer-css' href='https://wpfusion.com/wp-content/plugins/elementor/assets/css/widget-spacer.min.css?ver=3.32.3' media='all' />
+<link rel='stylesheet' id='widget-social-icons-css' href='https://wpfusion.com/wp-content/plugins/elementor/assets/css/widget-social-icons.min.css?ver=3.32.3' media='all' />
+<link rel='stylesheet' id='e-apple-webkit-css' href='https://wpfusion.com/wp-content/uploads/elementor/css/custom-apple-webkit.min.css?ver=1759423084' media='all' />
+<link rel='stylesheet' id='widget-divider-css' href='https://wpfusion.com/wp-content/plugins/elementor/assets/css/widget-divider.min.css?ver=3.32.3' media='all' />
+<link rel='stylesheet' id='widget-search-form-css' href='https://wpfusion.com/wp-content/plugins/elementor-pro/assets/css/widget-search-form.min.css?ver=3.32.2' media='all' />
+<link rel='stylesheet' id='elementor-post-63367-css' href='https://wpfusion.com/wp-content/uploads/elementor/css/post-63367.css?ver=1759423083' media='all' />
+<link rel='stylesheet' id='elementor-post-18260-css' href='https://wpfusion.com/wp-content/uploads/elementor/css/post-18260.css?ver=1759423086' media='all' />
+<link rel='stylesheet' id='elementor-post-16599-css' href='https://wpfusion.com/wp-content/uploads/elementor/css/post-16599.css?ver=1759423084' media='all' />
+<link rel='stylesheet' id='elementor-post-58068-css' href='https://wpfusion.com/wp-content/uploads/elementor/css/post-58068.css?ver=1759423469' media='all' />
+<link rel='stylesheet' id='notificationx-public-css' href='https://wpfusion.com/wp-content/plugins/notificationx/assets/public/css/frontend.css?ver=3.1.4' media='all' />
+<link rel='stylesheet' id='searchwp-forms-css' href='https://wpfusion.com/wp-content/plugins/searchwp/assets/css/frontend/search-forms.min.css?ver=4.5.1' media='all' />
+
+		<!-- Chatra {literal} -->
+		<script>
+			
+				window.ChatraSetup = {
+					onAnalyticEvent: function(eventName) {
+						pirsch( eventName );
+					}
+				};
+
+			
+
+			ChatraID = 'eJ4iwDrjhx7LacbTE';
+			(function(d, w, c) {
+				var n = d.getElementsByTagName('script')[0],
+					s = d.createElement('script');
+				w[c] = w[c] || function() {
+					(w[c].q = w[c].q || []).push(arguments);
+				};
+				s.async = true;
+				s.src = (d.location.protocol === 'https:' ? 'https:' : 'http:') +
+					'//call.chatra.io/chatra.js';
+				n.parentNode.insertBefore(s, n);
+			})(document, window, 'Chatra');
+		</script>
+		<!-- /Chatra {/literal} -->
+
+		<!-- Hotjar Tracking Code for WP Fusion -->
+		<script>
+			(function(h,o,t,j,a,r){
+				h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+				h._hjSettings={hjid:242718,hjsv:6};
+				a=o.getElementsByTagName('head')[0];
+				r=o.createElement('script');r.async=1;
+				r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+				a.appendChild(r);
+			})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+		</script>
+
+		<!-- Global site tag (gtag.js) - Google Ads -->
+		<!-- currently added via SEOPress  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-10797673558"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'AW-10797673558');
+		</script> -->
+
+		<script>
+			/**
+			 * Function that captures a click on an outbound link in Analytics.
+			 * This function takes a valid URL string as an argument, and uses that URL string
+			 * as the event label. Setting the transport method to 'beacon' lets the hit be sent
+			 * using 'navigator.sendBeacon' in browser that support it.
+			 */
+			var captureOutboundLink = function(url) {
+				ga('send', 'event', 'outbound', 'click', url, {
+					'transport': 'beacon',
+					'hitCallback': function() {
+						document.location = url;
+					}
+				});
+			}
+		</script>
+
+		
+			<script src="https://analytics.ahrefs.com/analytics.js" data-key="R7KpS9Fnen5oJJCAUxAZKw" async></script>
+
+			<script defer type="text/javascript"
+				src="/p/p/p.js.php"
+				id="pianjs"
+				data-hit-endpoint="/p/p/pv.php"
+				data-event-endpoint="/p/p/e.php"
+				data-session-endpoint="/p/p/s.php"></script>
+
+		
+		
+	
+	<script id="conversion-bridge-js-extra">
+var conversionbridge_vars = {"rest_url":"https:\/\/wpfusion.com\/wp-json\/conversionbridge\/v1\/track-event","ajaxurl":"https:\/\/wpfusion.com\/wp-admin\/admin-ajax.php","cookie_plugin":"","security":"8993dee377","restart":"","console":"","journeys":"1","tracking_method":"","has_consent":"1","pageview_id":"08a5bd7a284e0c30ef8742355c947e9e44136995044767e6d0ff505a6fb4fe2e-68e1946fa331f","params":[]};
+</script>
+<script src="https://wpfusion.com/wp-content/plugins/conversion-bridge/assets/js/conversionbridge.js?ver=1.10.1" id="conversion-bridge-js"></script>
+<script data-cfasync="false" src="https://wpfusion.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script src="https://wpfusion.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<script src="https://wpfusion.com/wp-content/plugins/google-analytics-premium/assets/js/frontend-gtag.min.js?ver=9.6.0" id="monsterinsights-frontend-script-js" async data-wp-strategy="async"></script>
+<script data-cfasync="false" data-wpfc-render="false" id='monsterinsights-frontend-script-js-extra'>var monsterinsights_frontend = {"js_events_tracking":"true","download_extensions":"doc,pdf,ppt,zip,xls,docx,pptx,xlsx","inbound_paths":"[{\"path\":\"\\\/go\\\/\",\"label\":\"affiliate\"},{\"path\":\"\\\/recommend\\\/\",\"label\":\"affiliate\"}]","home_url":"https:\/\/wpfusion.com","hash_tracking":"false","v4_id":"G-90LWC1TJNP"};</script>
+<script id="jquery-cookie-js-extra">
+var affwp_scripts = {"ajaxurl":"https:\/\/wpfusion.com\/wp-admin\/admin-ajax.php"};
+</script>
+<script src="https://wpfusion.com/wp-content/plugins/affiliate-wp/assets/js/jquery.cookie.min.js?ver=1.4.0" id="jquery-cookie-js"></script>
+<script id="affwp-tracking-js-extra">
+var affwp_debug_vars = {"integrations":{"edd":"Easy Digital Downloads"},"version":"2.29.1","currency":"USD","ref_cookie":"affwp_ref","visit_cookie":"affwp_ref_visit_id","campaign_cookie":"affwp_campaign"};
+</script>
+<script src="https://wpfusion.com/wp-content/plugins/affiliate-wp/assets/js/tracking.min.js?ver=2.29.1" id="affwp-tracking-js"></script>
+<script id="fen-error-tracking-js-extra">
+var fen_vars = {"ajax_url":"https:\/\/wpfusion.com\/wp-admin\/admin-ajax.php","nonce":"b06679b3f3","enabled_types":{"fatal":true,"error":true}};
+</script>
+<script src="https://wpfusion.com/wp-content/plugins/fatal-error-notify-pro/assets/js/error-tracking.js?ver=1.14.0" id="fen-error-tracking-js"></script>
+<script src="https://js.stripe.com/v3/?ver=v3" id="sandhills-stripe-js-v3-js"></script>
+<link rel="https://api.w.org/" href="https://wpfusion.com/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://wpfusion.com/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.8.3" />
+		<script type="text/javascript">
+		var AFFWP = AFFWP || {};
+		AFFWP.referral_var = 'ref';
+		AFFWP.expiration = 7;
+		AFFWP.debug = 0;
+
+
+		AFFWP.referral_credit_last = 0;
+		</script>
+<meta name="generator" content="Easy Digital Downloads v3.5.2" />
+<meta name="generator" content="Elementor 3.32.3; features: e_font_icon_svg, additional_custom_breakpoints; settings: css_print_method-external, google_font-disabled, font_display-auto">
+			<style>
+				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload),
+				.e-con.e-parent:nth-of-type(n+4):not(.e-lazyloaded):not(.e-no-lazyload) * {
+					background-image: none !important;
+				}
+				@media screen and (max-height: 1024px) {
+					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload),
+					.e-con.e-parent:nth-of-type(n+3):not(.e-lazyloaded):not(.e-no-lazyload) * {
+						background-image: none !important;
+					}
+				}
+				@media screen and (max-height: 640px) {
+					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload),
+					.e-con.e-parent:nth-of-type(n+2):not(.e-lazyloaded):not(.e-no-lazyload) * {
+						background-image: none !important;
+					}
+				}
+			</style>
+			<link rel="icon" href="https://wpfusion.com/wp-content/uploads/2019/08/cropped-logo-mark-500w-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://wpfusion.com/wp-content/uploads/2019/08/cropped-logo-mark-500w-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://wpfusion.com/wp-content/uploads/2019/08/cropped-logo-mark-500w-180x180.png" />
+<meta name="msapplication-TileImage" content="https://wpfusion.com/wp-content/uploads/2019/08/cropped-logo-mark-500w-270x270.png" />
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript></head>
+
+<body itemtype='https://schema.org/WebPage' itemscope='itemscope' class="error404 wp-custom-logo wp-theme-astra wp-child-theme-astra-child edd-js-none ast-desktop ast-page-builder-template ast-no-sidebar astra-3.4.4 ast-header-custom-item-inside group-blog ast-inherit-site-logo-transparent has-notificationx elementor-page-58068 elementor-default elementor-kit-63367">
+	<style>.edd-js-none .edd-has-js, .edd-js .edd-no-js, body.edd-js input.edd-no-js { display: none; }</style>
+	<script>/* <![CDATA[ */(function(){var c = document.body.classList;c.remove('edd-js-none');c.add('edd-js');})();/* ]]> */</script>
+	<div 
+class="hfeed site" id="page">
+	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+			<header data-elementor-type="header" data-elementor-id="18260" class="elementor elementor-18260 elementor-location-header" data-elementor-post-type="elementor_library">
+					<section class="elementor-section elementor-top-section elementor-element elementor-element-763a48d9 elementor-section-content-middle elementor-section-height-min-height elementor-section-boxed elementor-section-height-default elementor-section-items-middle" data-id="763a48d9" data-element_type="section">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-1e463c2" data-id="1e463c2" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-7615d8e4 elementor-widget elementor-widget-image" data-id="7615d8e4" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+																<a href="https://wpfusion.com">
+							<img src="https://wpfusion.com/wp-content/uploads/2019/08/logo-top-svg.svg" class="attachment-full size-full wp-image-17226 astra-logo-svg" alt="WP Fusion Logo" />								</a>
+															</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-66 elementor-top-column elementor-element elementor-element-37c4c1bf" data-id="37c4c1bf" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-cdeffbe elementor-nav-menu__align-end elementor-nav-menu--stretch elementor-nav-menu__text-align-center elementor-nav-menu--dropdown-tablet elementor-nav-menu--toggle elementor-nav-menu--burger elementor-widget elementor-widget-nav-menu" data-id="cdeffbe" data-element_type="widget" data-settings="{&quot;full_width&quot;:&quot;stretch&quot;,&quot;submenu_icon&quot;:{&quot;value&quot;:&quot;&lt;i aria-hidden=\&quot;true\&quot; class=\&quot;\&quot;&gt;&lt;\/i&gt;&quot;,&quot;library&quot;:&quot;&quot;},&quot;layout&quot;:&quot;horizontal&quot;,&quot;toggle&quot;:&quot;burger&quot;}" data-widget_type="nav-menu.default">
+				<div class="elementor-widget-container">
+								<nav aria-label="Menu" class="elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-horizontal e--pointer-underline e--animation-fade">
+				<ul id="menu-1-cdeffbe" class="elementor-nav-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-10501"><a href="https://wpfusion.com/features/" class="elementor-item menu-link">Features</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17230"><a href="https://wpfusion.com/features/" class="elementor-sub-item menu-link">Features</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-157598"><a href="https://wpfusion.com/about-us/" class="elementor-sub-item menu-link">About Us</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10116"><a href="https://wpfusion.com/documentation/#integrations" class="elementor-sub-item elementor-item-anchor menu-link">Plugin Integrations</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12446"><a href="https://wpfusion.com/documentation/#addons" class="elementor-sub-item elementor-item-anchor menu-link">Addons</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-139866"><a href="https://wpfusion.com/features/enhanced-ecommerce/" class="elementor-sub-item menu-link">Enhanced Ecommerce</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-80134"><a href="https://wpfusion.com/features/event-tracking/" class="elementor-sub-item menu-link">Event Tracking</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23480"><a href="https://wpfusion.com/recipes-and-ideas/" class="elementor-sub-item menu-link">Recipes and Ideas</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-221"><a href="https://wpfusion.com/pricing/" class="elementor-item menu-link">Pricing</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-119724"><a href="https://wpfusion.com/pricing/" class="elementor-sub-item menu-link">Pricing</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-119725"><a href="https://wpfusion.com/pricing-lifetime/" class="elementor-sub-item menu-link">Lifetime Pricing</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-119723"><a href="https://wpfusion.com/free-download/" class="elementor-sub-item menu-link">Free Download</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-70"><a href="https://wpfusion.com/documentation/" class="elementor-item menu-link">Get Help</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8220"><a href="https://wpfusion.com/documentation/" class="elementor-sub-item menu-link">Documentation</a></li>
+	<li class="wpl-green menu-item menu-item-type-post_type menu-item-object-page menu-item-8965"><a href="https://wpfusion.com/free-consultation/" class="elementor-sub-item menu-link">Free Consultation</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-46488"><a href="https://wpfusion.com/recommends/" class="elementor-sub-item menu-link">Recommended Tools</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8219"><a href="https://wpfusion.com/videos/" class="elementor-sub-item menu-link">Videos and Demos</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28854"><a href="https://wpfusion.com/feature-requests/" class="elementor-sub-item menu-link">Feature Requests</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-63038"><a href="https://wpfusion.com/roadmap/" class="elementor-sub-item menu-link">Roadmap</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1539"><a href="https://wpfusion.com/contact/" class="elementor-sub-item menu-link">Contact Us</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32602"><a href="https://wpfusion.com/experts/" class="elementor-sub-item menu-link">Find an Expert</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1533"><a href="https://wpfusion.com/blog/" class="elementor-item menu-link">Blog</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-163861"><a href="https://wpfusion.com/login/" class="elementor-item menu-link">Account</a></li>
+</ul>			</nav>
+					<div class="elementor-menu-toggle" role="button" tabindex="0" aria-label="Menu Toggle" aria-expanded="false">
+			<svg aria-hidden="true" role="presentation" class="elementor-menu-toggle__icon--open e-font-icon-svg e-eicon-menu-bar" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg"><path d="M104 333H896C929 333 958 304 958 271S929 208 896 208H104C71 208 42 237 42 271S71 333 104 333ZM104 583H896C929 583 958 554 958 521S929 458 896 458H104C71 458 42 487 42 521S71 583 104 583ZM104 833H896C929 833 958 804 958 771S929 708 896 708H104C71 708 42 737 42 771S71 833 104 833Z"></path></svg><svg aria-hidden="true" role="presentation" class="elementor-menu-toggle__icon--close e-font-icon-svg e-eicon-close" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg"><path d="M742 167L500 408 258 167C246 154 233 150 217 150 196 150 179 158 167 167 154 179 150 196 150 212 150 229 154 242 171 254L408 500 167 742C138 771 138 800 167 829 196 858 225 858 254 829L496 587 738 829C750 842 767 846 783 846 800 846 817 842 829 829 842 817 846 804 846 783 846 767 842 750 829 737L588 500 833 258C863 229 863 200 833 171 804 137 775 137 742 167Z"></path></svg>		</div>
+					<nav class="elementor-nav-menu--dropdown elementor-nav-menu__container" aria-hidden="true">
+				<ul id="menu-2-cdeffbe" class="elementor-nav-menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-10501"><a href="https://wpfusion.com/features/" class="elementor-item menu-link" tabindex="-1">Features</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17230"><a href="https://wpfusion.com/features/" class="elementor-sub-item menu-link" tabindex="-1">Features</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-157598"><a href="https://wpfusion.com/about-us/" class="elementor-sub-item menu-link" tabindex="-1">About Us</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10116"><a href="https://wpfusion.com/documentation/#integrations" class="elementor-sub-item elementor-item-anchor menu-link" tabindex="-1">Plugin Integrations</a></li>
+	<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-12446"><a href="https://wpfusion.com/documentation/#addons" class="elementor-sub-item elementor-item-anchor menu-link" tabindex="-1">Addons</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-139866"><a href="https://wpfusion.com/features/enhanced-ecommerce/" class="elementor-sub-item menu-link" tabindex="-1">Enhanced Ecommerce</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-80134"><a href="https://wpfusion.com/features/event-tracking/" class="elementor-sub-item menu-link" tabindex="-1">Event Tracking</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-23480"><a href="https://wpfusion.com/recipes-and-ideas/" class="elementor-sub-item menu-link" tabindex="-1">Recipes and Ideas</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-221"><a href="https://wpfusion.com/pricing/" class="elementor-item menu-link" tabindex="-1">Pricing</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-119724"><a href="https://wpfusion.com/pricing/" class="elementor-sub-item menu-link" tabindex="-1">Pricing</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-119725"><a href="https://wpfusion.com/pricing-lifetime/" class="elementor-sub-item menu-link" tabindex="-1">Lifetime Pricing</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-119723"><a href="https://wpfusion.com/free-download/" class="elementor-sub-item menu-link" tabindex="-1">Free Download</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-70"><a href="https://wpfusion.com/documentation/" class="elementor-item menu-link" tabindex="-1">Get Help</a>
+<ul class="sub-menu elementor-nav-menu--dropdown">
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8220"><a href="https://wpfusion.com/documentation/" class="elementor-sub-item menu-link" tabindex="-1">Documentation</a></li>
+	<li class="wpl-green menu-item menu-item-type-post_type menu-item-object-page menu-item-8965"><a href="https://wpfusion.com/free-consultation/" class="elementor-sub-item menu-link" tabindex="-1">Free Consultation</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-46488"><a href="https://wpfusion.com/recommends/" class="elementor-sub-item menu-link" tabindex="-1">Recommended Tools</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8219"><a href="https://wpfusion.com/videos/" class="elementor-sub-item menu-link" tabindex="-1">Videos and Demos</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28854"><a href="https://wpfusion.com/feature-requests/" class="elementor-sub-item menu-link" tabindex="-1">Feature Requests</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-63038"><a href="https://wpfusion.com/roadmap/" class="elementor-sub-item menu-link" tabindex="-1">Roadmap</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1539"><a href="https://wpfusion.com/contact/" class="elementor-sub-item menu-link" tabindex="-1">Contact Us</a></li>
+	<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-32602"><a href="https://wpfusion.com/experts/" class="elementor-sub-item menu-link" tabindex="-1">Find an Expert</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1533"><a href="https://wpfusion.com/blog/" class="elementor-item menu-link" tabindex="-1">Blog</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-163861"><a href="https://wpfusion.com/login/" class="elementor-item menu-link" tabindex="-1">Account</a></li>
+</ul>			</nav>
+						</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				</header>
+			<div id="content" class="site-content">
+		<div class="ast-container">
+		
+
+	<div id="primary" class="content-area primary">
+
+		
+		
+
+<section class="error-404 not-found">
+
+	
+			<div data-elementor-type="error-404" data-elementor-id="58068" class="elementor elementor-58068 elementor-location-single" data-elementor-post-type="elementor_library">
+					<section class="elementor-section elementor-top-section elementor-element elementor-element-3d5759ac elementor-section-height-min-height elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-items-middle" data-id="3d5759ac" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-wider">
+					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-7bbaa6ba" data-id="7bbaa6ba" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-6b7776ce elementor-widget elementor-widget-heading" data-id="6b7776ce" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<p class="elementor-heading-title elementor-size-default">404</p>				</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-2d24bd96" data-id="2d24bd96" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-79c513d3 elementor-widget elementor-widget-heading" data-id="79c513d3" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h2 class="elementor-heading-title elementor-size-default">Ooops.</h2>				</div>
+				</div>
+				<div class="elementor-element elementor-element-61ae3b18 elementor-widget elementor-widget-heading" data-id="61ae3b18" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h3 class="elementor-heading-title elementor-size-default">The page you were looking for couldn't be found.</h3>				</div>
+				</div>
+				<div class="elementor-element elementor-element-18d0333f elementor-widget-divider--view-line elementor-widget elementor-widget-divider" data-id="18d0333f" data-element_type="widget" data-widget_type="divider.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-divider">
+			<span class="elementor-divider-separator">
+						</span>
+		</div>
+						</div>
+				</div>
+				<div class="elementor-element elementor-element-77bdf6be elementor-widget elementor-widget-heading" data-id="77bdf6be" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<p class="elementor-heading-title elementor-size-default">You can navigate through our menu or use this search bar:</p>				</div>
+				</div>
+				<div class="elementor-element elementor-element-1b410f86 elementor-search-form--skin-classic elementor-search-form--button-type-icon elementor-search-form--icon-search elementor-widget elementor-widget-search-form" data-id="1b410f86" data-element_type="widget" data-settings="{&quot;skin&quot;:&quot;classic&quot;}" data-widget_type="search-form.default">
+				<div class="elementor-widget-container">
+							<search role="search">
+			<form class="elementor-search-form" action="https://wpfusion.com" method="get">
+												<div class="elementor-search-form__container">
+					<label class="elementor-screen-only" for="elementor-search-form-1b410f86">Search</label>
+
+					
+					<input id="elementor-search-form-1b410f86" placeholder="Search..." class="elementor-search-form__input" type="search" name="s" value="">
+					
+											<button class="elementor-search-form__submit" type="submit" aria-label="Search">
+															<div class="e-font-icon-svg-container"><svg class="fa fa-search e-font-icon-svg e-fas-search" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path></svg></div>													</button>
+					
+									</div>
+			</form>
+		</search>
+						</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				</div>
+		
+	
+</section><!-- .error-404 -->
+
+		
+
+		
+	</div><!-- #primary -->
+
+
+	</div> <!-- ast-container -->
+	</div><!-- #content -->
+		<footer data-elementor-type="footer" data-elementor-id="16599" class="elementor elementor-16599 elementor-location-footer" data-elementor-post-type="elementor_library">
+					<section class="elementor-section elementor-top-section elementor-element elementor-element-4003bff7 elementor-section-content-top elementor-section-boxed elementor-section-height-default elementor-section-height-default" data-id="4003bff7" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-20 elementor-top-column elementor-element elementor-element-07755ae elementor-hidden-tablet elementor-hidden-mobile" data-id="07755ae" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-1922447 elementor-widget elementor-widget-html" data-id="1922447" data-element_type="widget" data-widget_type="html.default">
+				<div class="elementor-widget-container">
+					<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100%" height="100%" viewBox="0 0 38 39" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>Mark</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Landing-Page" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Landing-Page-(Type-Outlined)" transform="translate(-115.000000, -38.000000)">
+            <g id="Section---Splash" transform="translate(106.000000, -602.000000)">
+                <g id="Logo-(Larger)" transform="translate(9.000000, 639.050453)">
+                    <g id="Mark" transform="translate(0.000000, 0.500000)">
+                        <path d="M8,0.5 L38,0.5 L38,0.5 L38,30.5 C38,34.918278 34.418278,38.5 30,38.5 L0,38.5 L0,38.5 L0,8.5 C-5.41083001e-16,4.081722 3.581722,0.5 8,0.5 Z" id="BG" fill="#E55B10"></path>
+                        <path d="M31,15.5 C31,16.3284271 30.3284271,17 29.5,17 L17.5,16.999 L17.5,29 C17.5,29.8284271 16.8284271,30.5 16,30.5 L15,30.5 C14.1715729,30.5 13.5,29.8284271 13.5,29 L13.5,15 C13.5,14.4577643 13.7877138,13.9827278 14.2188066,13.7192253 C14.4827278,13.2877138 14.9577643,13 15.5,13 L29.5,13 C30.3284271,13 31,13.6715729 31,14.5 L31,15.5 Z" id="Path" fill="#FFFFFF"></path>
+                        <path d="M8,23 C8,22.1715729 8.67157288,21.5 9.5,21.5 L21.5,21.501 L21.5,9.5 C21.5,8.67157288 22.1715729,8 23,8 L24,8 C24.8284271,8 25.5,8.67157288 25.5,9.5 L25.5,23.5 C25.5,24.0422357 25.2122862,24.5172722 24.7811934,24.7807747 C24.5172722,25.2122862 24.0422357,25.5 23.5,25.5 L9.5,25.5 C8.67157288,25.5 8,24.8284271 8,24 L8,23 Z" id="Path" fill="#FFFFFF"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>				</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-20 elementor-top-column elementor-element elementor-element-459c7e64" data-id="459c7e64" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-d480292 elementor-widget elementor-widget-heading" data-id="d480292" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h4 class="elementor-heading-title elementor-size-default">WP Fusion</h4>				</div>
+				</div>
+				<div class="elementor-element elementor-element-f450a16 elementor-widget elementor-widget-text-editor" data-id="f450a16" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p><a href="https://wpfusion.com/">Home</a></p><p><a href="https://wpfusion.com/features/">Features</a></p><p><a href="https://wpfusion.com/pricing/">Pricing</a></p><p><a href="https://wpfusion.com/testimonials/">Testimonials</a></p><p><a href="https://wpfusion.com/affiliate-registration/">Affiliates</a></p><p><a href="https://wpfusion.com/demo-signup/">Try Demo</a></p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-4b06033 elementor-widget elementor-widget-spacer" data-id="4b06033" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+						</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-20 elementor-top-column elementor-element elementor-element-101f538" data-id="101f538" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-1114965 elementor-widget elementor-widget-heading" data-id="1114965" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h4 class="elementor-heading-title elementor-size-default">Learn</h4>				</div>
+				</div>
+				<div class="elementor-element elementor-element-8775bdd elementor-widget elementor-widget-text-editor" data-id="8775bdd" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p><a href="https://wpfusion.com/blog/">Blog</a></p><p><a href="https://wpfusion.com/documentation/">Getting Started</a></p><p><a href="https://wpfusion.com/documentation/getting-started/shortcodes/">Shortcodes</a></p><p><a href="https://wpfusion.com/videos/">Videos and Demos</a></p><p><a href="https://wpfusion.com/documentation/faq/crm-compatibility-table/">Supported CRMs</a></p><p><a href="https://wpfusion.com/documentation/#integrations">Plugin Integrations</a></p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-9dd9da8 elementor-widget elementor-widget-spacer" data-id="9dd9da8" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+						</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-20 elementor-top-column elementor-element elementor-element-9b46b5a" data-id="9b46b5a" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-cfcf732 elementor-widget elementor-widget-heading" data-id="cfcf732" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h4 class="elementor-heading-title elementor-size-default">Support</h4>				</div>
+				</div>
+				<div class="elementor-element elementor-element-9218d5e elementor-widget elementor-widget-text-editor" data-id="9218d5e" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p><a href="https://wpfusion.com/contact/">Contact Support</a></p><p><a href="https://wpfusion.com/documentation/">Documentation</a></p><p><a href="https://wpfusion.com/documentation/">Frequently Asked Questions</a></p><p><a href="https://wpfusion.com/documentation/#developer-guides">Developers</a></p><p><a href="https://wpfusion.com/documentation/faq/changelog/">Changelog</a></p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-29afbeb elementor-widget elementor-widget-spacer" data-id="29afbeb" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+						</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-20 elementor-top-column elementor-element elementor-element-59f2a98" data-id="59f2a98" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-5cd899a elementor-widget elementor-widget-heading" data-id="5cd899a" data-element_type="widget" data-widget_type="heading.default">
+				<div class="elementor-widget-container">
+					<h4 class="elementor-heading-title elementor-size-default">Company</h4>				</div>
+				</div>
+				<div class="elementor-element elementor-element-d54605a elementor-widget elementor-widget-text-editor" data-id="d54605a" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									<p><a href="https://wpfusion.com/about-us/">About Us</a></p><p><a href="https://wpfusion.com/contact/">Contact</a></p><p><a href="https://wpfusion.com/brand-assets/">Brand Assets</a></p><p><a href="https://wpfusion.com/terms-conditions/">Terms and Conditions</a></p><p><a href="https://wpfusion.com/privacy-policy/">Privacy Policy</a></p><p><a href="https://wpfusion.com/information-security-policy/">Information Security Policy</a></p>								</div>
+				</div>
+				<div class="elementor-element elementor-element-14c4f09 elementor-widget elementor-widget-spacer" data-id="14c4f09" data-element_type="widget" data-widget_type="spacer.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-spacer">
+			<div class="elementor-spacer-inner"></div>
+		</div>
+						</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				<section class="elementor-section elementor-top-section elementor-element elementor-element-990647a elementor-section-height-min-height elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-items-middle" data-id="990647a" data-element_type="section" data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
+						<div class="elementor-container elementor-column-gap-default">
+					<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-2c1f6fb" data-id="2c1f6fb" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-4b9bfec elementor-widget__width-auto elementor-widget elementor-widget-image" data-id="4b9bfec" data-element_type="widget" data-widget_type="image.default">
+				<div class="elementor-widget-container">
+																<a href="https://verygoodplugins.com/">
+							<img width="40" height="40" src="https://wpfusion.com/wp-content/uploads/2019/08/vgp-logo.png" class="attachment-full size-full wp-image-16989" alt="Very Good Plugins LLC Logo" />								</a>
+															</div>
+				</div>
+				<div class="elementor-element elementor-element-7627f245 elementor-widget__width-auto elementor-widget elementor-widget-text-editor" data-id="7627f245" data-element_type="widget" data-widget_type="text-editor.default">
+				<div class="elementor-widget-container">
+									Copyright © 2025 Very Good Plugins								</div>
+				</div>
+					</div>
+		</div>
+				<div class="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-ebeac15" data-id="ebeac15" data-element_type="column">
+			<div class="elementor-widget-wrap elementor-element-populated">
+						<div class="elementor-element elementor-element-10e8ee55 elementor-shape-circle e-grid-align-right elementor-grid-0 elementor-widget elementor-widget-social-icons" data-id="10e8ee55" data-element_type="widget" data-widget_type="social-icons.default">
+				<div class="elementor-widget-container">
+							<div class="elementor-social-icons-wrapper elementor-grid" role="list">
+							<span class="elementor-grid-item" role="listitem">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-facebook-f elementor-repeater-item-6fb5456" href="https://www.facebook.com/groups/wpfusion/" target="_blank">
+						<span class="elementor-screen-only">Facebook-f</span>
+						<svg aria-hidden="true" class="e-font-icon-svg e-fab-facebook-f" viewBox="0 0 320 512" xmlns="http://www.w3.org/2000/svg"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path></svg>					</a>
+				</span>
+							<span class="elementor-grid-item" role="listitem">
+					<a class="elementor-icon elementor-social-icon elementor-social-icon-twitter elementor-repeater-item-91865a2" href="https://twitter.com/wpfusion" target="_blank">
+						<span class="elementor-screen-only">Twitter</span>
+						<svg aria-hidden="true" class="e-font-icon-svg e-fab-twitter" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg>					</a>
+				</span>
+					</div>
+						</div>
+				</div>
+					</div>
+		</div>
+					</div>
+		</section>
+				</footer>
+			</div><!-- #page -->
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/astra-child\/*","\/wp-content\/themes\/astra\/*","\/*\\?(.+)","\/checkout\/*"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+				<script id="conversion-bridge-events--file">
+				document.addEventListener("click", function(event) {
+					if (event.target.matches( 'a[href$=".doc"], a[href$=".pdf"], a[href$=".ppt"], a[href$=".zip"], a[href$=".xls"], a[href$=".docx"], a[href$=".pptx"], a[href$=".xlsx"]' ) ) {
+						let file_url = event.target.href;
+						ConversionBridge.event( "file_download", "9124389a8c899cb790f5e2bc1c5f8503", "core_file_download", "", {"file":file_url,"label":"File download"});
+if ( typeof pirsch !== "undefined" ) {
+pirsch( "File download", {"meta":{"file":file_url,"label":"File download"}} );
+}
+					}
+				});
+				</script>
+				<script id="conversion-bridge--custom-events">document.addEventListener( "DOMContentLoaded", (event) => {				document.body.addEventListener( "click", function(e) {
+					let link = e.target.closest( 'a.cta-button' );
+					if ( link ) {
+						if ( typeof pirsch !== "undefined" ) {
+pirsch( "CTA Click" );
+}
+						ConversionBridge.event( "click", "15ba70ff312d5e2cac416f226bac4d7e", "CTA Click", "", [] );
+					}
+				});
+				});</script>        <style>
+            .searchwp-live-search-results {
+                opacity: 0;
+                transition: opacity .25s ease-in-out;
+                -moz-transition: opacity .25s ease-in-out;
+                -webkit-transition: opacity .25s ease-in-out;
+                height: 0;
+                overflow: hidden;
+                z-index: 9999995; /* Exceed SearchWP Modal Search Form overlay. */
+                position: absolute;
+                display: none;
+            }
+
+            .searchwp-live-search-results-showing {
+                display: block;
+                opacity: 1;
+                height: auto;
+                overflow: auto;
+            }
+
+            .searchwp-live-search-no-results {
+                padding: 3em 2em 0;
+                text-align: center;
+            }
+
+            .searchwp-live-search-no-min-chars:after {
+                content: "Continue typing";
+                display: block;
+                text-align: center;
+                padding: 2em 2em 0;
+            }
+        </style>
+                <script>
+            var _SEARCHWP_LIVE_AJAX_SEARCH_BLOCKS = true;
+            var _SEARCHWP_LIVE_AJAX_SEARCH_ENGINE = 'default';
+            var _SEARCHWP_LIVE_AJAX_SEARCH_CONFIG = 'default';
+        </script>
+        			<script>
+				const lazyloadRunObserver = () => {
+					const lazyloadBackgrounds = document.querySelectorAll( `.e-con.e-parent:not(.e-lazyloaded)` );
+					const lazyloadBackgroundObserver = new IntersectionObserver( ( entries ) => {
+						entries.forEach( ( entry ) => {
+							if ( entry.isIntersecting ) {
+								let lazyloadBackground = entry.target;
+								if( lazyloadBackground ) {
+									lazyloadBackground.classList.add( 'e-lazyloaded' );
+								}
+								lazyloadBackgroundObserver.unobserve( entry.target );
+							}
+						});
+					}, { rootMargin: '200px 0px 200px 0px' } );
+					lazyloadBackgrounds.forEach( ( lazyloadBackground ) => {
+						lazyloadBackgroundObserver.observe( lazyloadBackground );
+					} );
+				};
+				const events = [
+					'DOMContentLoaded',
+					'elementor/lazyload/observe',
+				];
+				events.forEach( ( event ) => {
+					document.addEventListener( event, lazyloadRunObserver );
+				} );
+			</script>
+			<script type="text/javascript">
+		/* MonsterInsights Scroll Tracking */
+		if ( typeof(jQuery) !== 'undefined' ) {
+		jQuery( document ).ready(function(){
+		function monsterinsights_scroll_tracking_load() {
+		if ( ( typeof(__gaTracker) !== 'undefined' && __gaTracker && __gaTracker.hasOwnProperty( "loaded" ) && __gaTracker.loaded == true ) || ( typeof(__gtagTracker) !== 'undefined' && __gtagTracker ) ) {
+		(function(factory) {
+		factory(jQuery);
+		}(function($) {
+
+		/* Scroll Depth */
+		"use strict";
+		var defaults = {
+		percentage: true
+		};
+
+		var $window = $(window),
+		cache = [],
+		scrollEventBound = false,
+		lastPixelDepth = 0;
+
+		/*
+		* Plugin
+		*/
+
+		$.scrollDepth = function(options) {
+
+		var startTime = +new Date();
+
+		options = $.extend({}, defaults, options);
+
+		/*
+		* Functions
+		*/
+
+		function sendEvent(action, label, scrollDistance, timing) {
+		if ( 'undefined' === typeof MonsterInsightsObject || 'undefined' === typeof MonsterInsightsObject.sendEvent ) {
+		return;
+		}
+			var paramName = action.toLowerCase();
+	var fieldsArray = {
+	send_to: 'G-90LWC1TJNP',
+	non_interaction: true
+	};
+	fieldsArray[paramName] = label;
+
+	if (arguments.length > 3) {
+	fieldsArray.scroll_timing = timing
+	MonsterInsightsObject.sendEvent('event', 'scroll_depth', fieldsArray);
+	} else {
+	MonsterInsightsObject.sendEvent('event', 'scroll_depth', fieldsArray);
+	}
+			}
+
+		function calculateMarks(docHeight) {
+		return {
+		'25%' : parseInt(docHeight * 0.25, 10),
+		'50%' : parseInt(docHeight * 0.50, 10),
+		'75%' : parseInt(docHeight * 0.75, 10),
+		/* Cushion to trigger 100% event in iOS */
+		'100%': docHeight - 5
+		};
+		}
+
+		function checkMarks(marks, scrollDistance, timing) {
+		/* Check each active mark */
+		$.each(marks, function(key, val) {
+		if ( $.inArray(key, cache) === -1 && scrollDistance >= val ) {
+		sendEvent('Percentage', key, scrollDistance, timing);
+		cache.push(key);
+		}
+		});
+		}
+
+		function rounded(scrollDistance) {
+		/* Returns String */
+		return (Math.floor(scrollDistance/250) * 250).toString();
+		}
+
+		function init() {
+		bindScrollDepth();
+		}
+
+		/*
+		* Public Methods
+		*/
+
+		/* Reset Scroll Depth with the originally initialized options */
+		$.scrollDepth.reset = function() {
+		cache = [];
+		lastPixelDepth = 0;
+		$window.off('scroll.scrollDepth');
+		bindScrollDepth();
+		};
+
+		/* Add DOM elements to be tracked */
+		$.scrollDepth.addElements = function(elems) {
+
+		if (typeof elems == "undefined" || !$.isArray(elems)) {
+		return;
+		}
+
+		$.merge(options.elements, elems);
+
+		/* If scroll event has been unbound from window, rebind */
+		if (!scrollEventBound) {
+		bindScrollDepth();
+		}
+
+		};
+
+		/* Remove DOM elements currently tracked */
+		$.scrollDepth.removeElements = function(elems) {
+
+		if (typeof elems == "undefined" || !$.isArray(elems)) {
+		return;
+		}
+
+		$.each(elems, function(index, elem) {
+
+		var inElementsArray = $.inArray(elem, options.elements);
+		var inCacheArray = $.inArray(elem, cache);
+
+		if (inElementsArray != -1) {
+		options.elements.splice(inElementsArray, 1);
+		}
+
+		if (inCacheArray != -1) {
+		cache.splice(inCacheArray, 1);
+		}
+
+		});
+
+		};
+
+		/*
+		* Throttle function borrowed from:
+		* Underscore.js 1.5.2
+		* http://underscorejs.org
+		* (c) 2009-2013 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+		* Underscore may be freely distributed under the MIT license.
+		*/
+
+		function throttle(func, wait) {
+		var context, args, result;
+		var timeout = null;
+		var previous = 0;
+		var later = function() {
+		previous = new Date;
+		timeout = null;
+		result = func.apply(context, args);
+		};
+		return function() {
+		var now = new Date;
+		if (!previous) previous = now;
+		var remaining = wait - (now - previous);
+		context = this;
+		args = arguments;
+		if (remaining <= 0) {
+		clearTimeout(timeout);
+		timeout = null;
+		previous = now;
+		result = func.apply(context, args);
+		} else if (!timeout) {
+		timeout = setTimeout(later, remaining);
+		}
+		return result;
+		};
+		}
+
+		/*
+		* Scroll Event
+		*/
+
+		function bindScrollDepth() {
+
+		scrollEventBound = true;
+
+		$window.on('scroll.scrollDepth', throttle(function() {
+		/*
+		* We calculate document and window height on each scroll event to
+		* account for dynamic DOM changes.
+		*/
+
+		var docHeight = $(document).height(),
+		winHeight = window.innerHeight ? window.innerHeight : $window.height(),
+		scrollDistance = $window.scrollTop() + winHeight,
+
+		/* Recalculate percentage marks */
+		marks = calculateMarks(docHeight),
+
+		/* Timing */
+		timing = +new Date - startTime;
+
+		checkMarks(marks, scrollDistance, timing);
+		}, 500));
+
+		}
+
+		init();
+		};
+
+		/* UMD export */
+		return $.scrollDepth;
+
+		}));
+
+		jQuery.scrollDepth();
+		} else {
+		setTimeout(monsterinsights_scroll_tracking_load, 200);
+		}
+		}
+		monsterinsights_scroll_tracking_load();
+		});
+		}
+		/* End MonsterInsights Scroll Tracking */
+		
+</script><script id="wpfmain-js-extra">
+var wpfmain = {"ajaxurl":"https:\/\/wpfusion.com\/wp-admin\/admin-ajax.php"};
+</script>
+<script src="https://wpfusion.com/wp-content/themes/astra-child/js/main.js?ver=2.8.9" id="wpfmain-js"></script>
+<script id="rocket-browser-checker-js-after">
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script id="rocket-preload-links-js-extra">
+var RocketPreloadLinksConfig = {"excludeUris":"\/login(.*)\/|\/account(.*)\/|\/search(.*)\/|\/affiliate-(.*)\/|\/contact\/|\/feature-requests(.*)\/|\/oauth\/|\/account\/|\/demo-signup\/|\/black-friday-unsubscribed\/|\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/edd-sl\/|\/checkout\/|\/(index.php\/)?(.*)wp-json(\/.*|$)|\/refer\/|\/go\/|\/recommend\/|\/recommends\/","usesTrailingSlash":"","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/wpfusion.com","onHoverDelay":"100","rateThrottle":"3"};
+</script>
+<script id="rocket-preload-links-js-after">
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script id="rocket_lazyload_css-js-extra">
+var rocket_lazyload_css_data = {"threshold":"300"};
+</script>
+<script id="rocket_lazyload_css-js-after">
+!function o(n,c,a){function u(t,e){if(!c[t]){if(!n[t]){var r="function"==typeof require&&require;if(!e&&r)return r(t,!0);if(s)return s(t,!0);throw(e=new Error("Cannot find module '"+t+"'")).code="MODULE_NOT_FOUND",e}r=c[t]={exports:{}},n[t][0].call(r.exports,function(e){return u(n[t][1][e]||e)},r,r.exports,o,n,c,a)}return c[t].exports}for(var s="function"==typeof require&&require,e=0;e<a.length;e++)u(a[e]);return u}({1:[function(e,t,r){"use strict";{const c="undefined"==typeof rocket_pairs?[]:rocket_pairs,a=(("undefined"==typeof rocket_excluded_pairs?[]:rocket_excluded_pairs).map(t=>{var e=t.selector;document.querySelectorAll(e).forEach(e=>{e.setAttribute("data-rocket-lazy-bg-"+t.hash,"excluded")})}),document.querySelector("#wpr-lazyload-bg-container"));var o=rocket_lazyload_css_data.threshold||300;const u=new IntersectionObserver(e=>{e.forEach(t=>{t.isIntersecting&&c.filter(e=>t.target.matches(e.selector)).map(t=>{var e;t&&((e=document.createElement("style")).textContent=t.style,a.insertAdjacentElement("afterend",e),t.elements.forEach(e=>{u.unobserve(e),e.setAttribute("data-rocket-lazy-bg-"+t.hash,"loaded")}))})})},{rootMargin:o+"px"});function n(){0<(0<arguments.length&&void 0!==arguments[0]?arguments[0]:[]).length&&c.forEach(t=>{try{document.querySelectorAll(t.selector).forEach(e=>{"loaded"!==e.getAttribute("data-rocket-lazy-bg-"+t.hash)&&"excluded"!==e.getAttribute("data-rocket-lazy-bg-"+t.hash)&&(u.observe(e),(t.elements||=[]).push(e))})}catch(e){console.error(e)}})}n(),function(){const r=window.MutationObserver;return function(e,t){if(e&&1===e.nodeType)return(t=new r(t)).observe(e,{attributes:!0,childList:!0,subtree:!0}),t}}()(document.querySelector("body"),n)}},{}]},{},[1]);
+</script>
+<script src="https://wpfusion.com/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=3.32.3" id="elementor-webpack-runtime-js"></script>
+<script src="https://wpfusion.com/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=3.32.3" id="elementor-frontend-modules-js"></script>
+<script src="https://wpfusion.com/wp-includes/js/jquery/ui/core.min.js?ver=1.13.3" id="jquery-ui-core-js"></script>
+<script id="elementor-frontend-js-before">
+var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false,"isScriptDebug":false},"i18n":{"shareOnFacebook":"Share on Facebook","shareOnTwitter":"Share on Twitter","pinIt":"Pin it","download":"Download","downloadImage":"Download image","fullscreen":"Fullscreen","zoom":"Zoom","share":"Share","playVideo":"Play Video","previous":"Previous","next":"Next","close":"Close","a11yCarouselPrevSlideMessage":"Previous slide","a11yCarouselNextSlideMessage":"Next slide","a11yCarouselFirstSlideMessage":"This is the first slide","a11yCarouselLastSlideMessage":"This is the last slide","a11yCarouselPaginationBulletMessage":"Go to slide"},"is_rtl":false,"breakpoints":{"xs":0,"sm":480,"md":561,"lg":1025,"xl":1440,"xxl":1600},"responsive":{"breakpoints":{"mobile":{"label":"Mobile Portrait","value":560,"default_value":767,"direction":"max","is_enabled":true},"mobile_extra":{"label":"Mobile Landscape","value":880,"default_value":880,"direction":"max","is_enabled":false},"tablet":{"label":"Tablet Portrait","value":1024,"default_value":1024,"direction":"max","is_enabled":true},"tablet_extra":{"label":"Tablet Landscape","value":1200,"default_value":1200,"direction":"max","is_enabled":false},"laptop":{"label":"Laptop","value":1366,"default_value":1366,"direction":"max","is_enabled":false},"widescreen":{"label":"Widescreen","value":2400,"default_value":2400,"direction":"min","is_enabled":false}},"hasCustomBreakpoints":true},"version":"3.32.3","is_static":false,"experimentalFeatures":{"e_font_icon_svg":true,"additional_custom_breakpoints":true,"theme_builder_v2":true,"home_screen":true,"global_classes_should_enforce_capabilities":true,"e_variables":true,"cloud-library":true,"e_opt_in_v4_page":true,"import-export-customization":true,"e_pro_variables":true},"urls":{"assets":"https:\/\/wpfusion.com\/wp-content\/plugins\/elementor\/assets\/","ajaxurl":"https:\/\/wpfusion.com\/wp-admin\/admin-ajax.php","uploadUrl":"https:\/\/wpfusion.com\/wp-content\/uploads"},"nonces":{"floatingButtonsClickTracking":"f3a4eb7c02"},"swiperClass":"swiper","settings":{"editorPreferences":[]},"kit":{"viewport_mobile":560,"viewport_tablet":1024,"active_breakpoints":["viewport_mobile","viewport_tablet"],"global_image_lightbox":"yes","lightbox_enable_counter":"yes","lightbox_enable_fullscreen":"yes","lightbox_enable_zoom":"yes","lightbox_enable_share":"yes","lightbox_title_src":"title","lightbox_description_src":"description"},"post":{"id":0,"title":"404 - Page not found | WP Fusion","excerpt":""}};
+</script>
+<script src="https://wpfusion.com/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=3.32.3" id="elementor-frontend-js"></script>
+<script src="https://wpfusion.com/wp-content/plugins/elementor-pro/assets/lib/smartmenus/jquery.smartmenus.min.js?ver=1.2.1" id="smartmenus-js"></script>
+<script id="notificationx-public-js-extra">
+var notificationxPublic = {"necessary_tab_info":{"title":"Necessary","desc":"Necessary cookies are needed to ensure the basic functions of this site, like allowing secure log-ins and managing your consent settings. These cookies do not collect any personal information."},"functional_tab_info":{"title":"Functional","desc":"Functional cookies assist in performing tasks like sharing website content on social media, collecting feedback, and enabling other third-party features."},"analytics_tab_info":{"title":"Analytics","desc":"Analytical cookies help us understand how visitors use the website. They provide data on metrics like the number of visitors, bounce rate, traffic sources etc."},"performance_tab_info":{"title":"Performance","desc":"Performance cookies help analyze the website's key performance indicators, which in turn helps improve the user experience for visitors."},"advertising_tab_info":{"title":"Advertisement","desc":"Advertisement cookies help analyze the website's key advertising indicators, which in turn helps improve the user experience for visitors."},"uncategorized_tab_info":{"title":"Uncategorized","desc":"Uncategorized cookies are those that don't fall into any specific category but may still be used for various purposes on the site. These cookies help us improve user experience by tracking interactions that don't fit into other cookie types."},"is_enabled_wp_consent_api":""};
+</script>
+<script src="https://wpfusion.com/wp-content/plugins/notificationx/assets/public/js/frontend.js?ver=3.1.4" id="notificationx-public-js"></script>
+<script src="https://wpfusion.com/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=3.32.2" id="elementor-pro-webpack-runtime-js"></script>
+<script src="https://wpfusion.com/wp-includes/js/dist/hooks.min.js?ver=4d63a3d491d11ffd8ac6" id="wp-hooks-js"></script>
+<script data-cfasync="false" src="https://wpfusion.com/wp-includes/js/dist/i18n.min.js?ver=5e580eb46a90c2b997e6" id="wp-i18n-js"></script>
+<script id="wp-i18n-js-after">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
+<script id="elementor-pro-frontend-js-before">
+var ElementorProFrontendConfig = {"ajaxurl":"https:\/\/wpfusion.com\/wp-admin\/admin-ajax.php","nonce":"199df68f45","urls":{"assets":"https:\/\/wpfusion.com\/wp-content\/plugins\/elementor-pro\/assets\/","rest":"https:\/\/wpfusion.com\/wp-json\/"},"settings":{"lazy_load_background_images":true},"popup":{"hasPopUps":true},"shareButtonsNetworks":{"facebook":{"title":"Facebook","has_counter":true},"twitter":{"title":"Twitter"},"linkedin":{"title":"LinkedIn","has_counter":true},"pinterest":{"title":"Pinterest","has_counter":true},"reddit":{"title":"Reddit","has_counter":true},"vk":{"title":"VK","has_counter":true},"odnoklassniki":{"title":"OK","has_counter":true},"tumblr":{"title":"Tumblr"},"digg":{"title":"Digg"},"skype":{"title":"Skype"},"stumbleupon":{"title":"StumbleUpon","has_counter":true},"mix":{"title":"Mix"},"telegram":{"title":"Telegram"},"pocket":{"title":"Pocket","has_counter":true},"xing":{"title":"XING","has_counter":true},"whatsapp":{"title":"WhatsApp"},"email":{"title":"Email"},"print":{"title":"Print"},"x-twitter":{"title":"X"},"threads":{"title":"Threads"}},"facebook_sdk":{"lang":"en_US","app_id":""},"lottie":{"defaultAnimationUrl":"https:\/\/wpfusion.com\/wp-content\/plugins\/elementor-pro\/modules\/lottie\/assets\/animations\/default.json"}};
+</script>
+<script src="https://wpfusion.com/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=3.32.2" id="elementor-pro-frontend-js"></script>
+<script src="https://wpfusion.com/wp-content/plugins/elementor-pro/assets/js/elements-handlers.min.js?ver=3.32.2" id="pro-elements-handlers-js"></script>
+			<script>
+			/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
+			</script>
+			            <script data-no-optimize="1">
+                (function() {
+                    window.notificationXArr = window.notificationXArr || [];
+                    window.notificationXArr.push({"global":[],"active":["1"],"pressbar":[],"gdpr":[],"total":1,"rest":{"root":"https:\/\/wpfusion.com\/wp-json\/","namespace":"notificationx\/v1","nonce":"","omit_credentials":true},"assets":"https:\/\/wpfusion.com\/wp-content\/plugins\/notificationx\/assets\/public\/","is_pro":false,"gmt_offset":-5,"lang":"en_US","common_assets":"https:\/\/wpfusion.com\/wp-content\/plugins\/notificationx\/assets\/common\/","extra":{"is_singular":false,"query":{"page":"","name":"wpfusion-logo.png","category_name":"wp-content\/uploads\/2020\/05"},"queried_id":0,"pid":0},"localeData":false});
+                })();
+            </script>
+            <script>window.lazyLoadOptions=[{elements_selector:"img[data-lazy-src],.rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}},{elements_selector:".rocket-lazyload",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,}];window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://wpfusion.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script>	</body>
+</html>
+
+<!-- plugin=object-cache-pro client=phpredis metric#hits=6093 metric#misses=45 metric#hit-ratio=99.3 metric#bytes=7287802 metric#prefetches=0 metric#store-reads=199 metric#store-writes=75 metric#store-hits=380 metric#store-misses=30 metric#sql-queries=83 metric#ms-total=507.47 metric#ms-cache=40.09 metric#ms-cache-avg=0.1468 metric#ms-cache-ratio=7.9 sample#redis-hits=27885674 sample#redis-misses=3118697 sample#redis-hit-ratio=89.9 sample#redis-ops-per-sec=165 sample#redis-evicted-keys=410757 sample#redis-used-memory=832537104 sample#redis-used-memory-rss=857108480 sample#redis-memory-fragmentation-ratio=1.0 sample#redis-connected-clients=1 sample#redis-tracking-clients=0 sample#redis-rejected-connections=0 sample#redis-keys=1142115 -->
