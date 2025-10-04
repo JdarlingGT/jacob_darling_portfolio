@@ -16,11 +16,13 @@ const Header = ({ className = '' }) => {
   }, []);
 
   const navigationItems = [
-    { name: 'Home', path: '/homepage', icon: 'Home' },
+    { name: 'Home', path: '/', icon: 'Home' },
     { name: 'About', path: '/about', icon: 'User' },
     { name: 'Case Studies', path: '/case-studies', icon: 'FileText' },
     { name: 'Projects', path: '/projects', icon: 'Code' },
-    { name: 'Toolbox', path: '/toolbox', icon: 'Wrench' }
+    { name: 'Toolbox', path: '/toolbox', icon: 'Wrench' },
+    { name: 'Graphic Design', path: '/graphic-design', icon: 'Image' },
+    { name: 'Video Projects', path: '/video-projects', icon: 'Video' }
   ];
 
   const secondaryItems = [
@@ -39,17 +41,17 @@ const Header = ({ className = '' }) => {
 
   return (
     <>
-      <header 
+      <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled 
-            ? 'bg-background/95 backdrop-blur-md border-b border-border brand-shadow' 
+          isScrolled
+            ? 'bg-background/95 backdrop-blur-md border-b border-border brand-shadow'
             : 'bg-transparent'
         } ${className}`}
       >
         <div className="w-full">
           <div className="flex items-center justify-between h-16 px-6 lg:px-8">
             {/* Logo */}
-            <div 
+            <div
               className="flex items-center cursor-pointer smooth-transition hover:opacity-80"
               onClick={() => handleNavigation('/homepage')}
             >
@@ -76,14 +78,14 @@ const Header = ({ className = '' }) => {
                   <span className="font-medium">{item?.name}</span>
                 </button>
               ))}
-              
+
               {/* More Menu */}
               <div className="relative group">
                 <button className="flex items-center space-x-2 px-4 py-2 rounded-lg text-text-secondary hover:text-text-primary hover:bg-muted smooth-transition">
                   <Icon name="MoreHorizontal" size={16} />
                   <span className="font-medium">More</span>
                 </button>
-                
+
                 {/* Dropdown */}
                 <div className="absolute top-full right-0 mt-2 w-48 bg-popover border border-border rounded-lg brand-shadow opacity-0 invisible group-hover:opacity-100 group-hover:visible smooth-transition">
                   <div className="py-2">
@@ -153,7 +155,7 @@ const Header = ({ className = '' }) => {
                   <span className="font-medium">{item?.name}</span>
                 </button>
               ))}
-              
+
               {/* Mobile CTAs */}
               <div className="pt-4 space-y-3 border-t border-border">
                 <Button

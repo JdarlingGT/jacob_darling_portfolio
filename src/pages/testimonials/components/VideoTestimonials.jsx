@@ -55,30 +55,32 @@ const VideoTestimonials = () => {
             Video <span className="text-conversion">Testimonials</span>
           </h2>
           <p className="text-lg text-text-secondary max-w-3xl mx-auto">
-            Watch authentic client interviews discussing real project outcomes, 
+            Watch authentic client interviews discussing real project outcomes,
             challenges overcome, and the measurable impact of our collaborations
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {videoTestimonials?.map((video) => (
-            <div 
+            <div
               key={video?.id}
               className="bg-background border border-border rounded-xl overflow-hidden brand-shadow hover:shadow-lg transition-all duration-300 group"
             >
               {/* Video Thumbnail */}
               <div className="relative aspect-video bg-muted overflow-hidden">
-                <img 
-                  src={video?.thumbnail} 
-                  alt={`${video?.name} video testimonial`}
+                <img
+                  src={video?.thumbnail}
+                  alt={video?.name ? `${video?.name} video testimonial` : 'Video testimonial thumbnail'}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
                 />
-                
+
                 {/* Play Button Overlay */}
                 <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/30 transition-all">
                   <button
                     onClick={() => handleVideoPlay(video?.id)}
                     className="w-16 h-16 bg-conversion rounded-full flex items-center justify-center hover:bg-conversion-dark hover:scale-110 transition-all shadow-lg"
+                    aria-label={`Play video testimonial for ${video?.name || 'unknown person'}`}
                   >
                     <Icon name="Play" size={24} className="text-white ml-1" />
                   </button>
@@ -109,7 +111,7 @@ const VideoTestimonials = () => {
                       {video?.company}
                     </p>
                   </div>
-                  
+
                   <div className="flex space-x-2">
                     <button className="p-2 hover:bg-muted rounded-lg transition-colors">
                       <Icon name="Share2" size={16} className="text-text-secondary hover:text-conversion" />
@@ -127,7 +129,7 @@ const VideoTestimonials = () => {
                 {/* Skills Tags */}
                 <div className="flex flex-wrap gap-2 mb-6">
                   {video?.skills?.map((skill, index) => (
-                    <span 
+                    <span
                       key={index}
                       className="px-2 py-1 bg-conversion/10 text-conversion text-xs rounded-full"
                     >
@@ -163,7 +165,7 @@ const VideoTestimonials = () => {
               >
                 <Icon name="X" size={24} />
               </button>
-              
+
               <div className="w-full h-full bg-muted rounded-xl flex items-center justify-center">
                 <div className="text-center">
                   <Icon name="Play" size={48} className="text-conversion mx-auto mb-4" />

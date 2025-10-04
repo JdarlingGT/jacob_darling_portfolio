@@ -10,7 +10,7 @@ const AboutMePage = () => {
   useEffect(() => {
     // Set page title and meta description
     document.title = 'About Me - Jacob Darling | The Architect in the Marketing Room';
-    
+
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription?.setAttribute('content', 'Discover Jacob Darling\'s unique approach as a marketing leader who bridges creative vision with technical execution. Learn about the architect in the marketing room solving the handoff problem.');
@@ -44,62 +44,13 @@ const AboutMePage = () => {
     };
   }, [isScrollAnimationTriggered]);
 
-  const timelineItems = [
-    {
-      phase: "The Foundation",
-      period: "2004-2008",
-      title: "Strategic Thinking Roots",
-      description: "Built analytical foundation at Indiana University, winning Target Marketing Competition through innovative strategy development.",
-      icon: "GraduationCap"
-    },
-    {
-      phase: "The Evolution",
-      period: "2008-2018", 
-      title: "Marketing Mastery",
-      description: "Developed expertise in brand strategy, campaign development, and creative execution across diverse industries.",
-      icon: "Lightbulb"
-    },
-    {
-      phase: "The Bridge",
-      period: "2018-2023",
-      title: "Technical Integration", 
-      description: "Merged marketing expertise with technical architecture, mastering CRM systems, automation workflows, and infrastructure design.",
-      icon: "Settings"
-    },
-    {
-      phase: "The Architect",
-      period: "2023-Present",
-      title: "Systems Leadership",
-      description: "Leading as Marketing Director & Systems Architect at Graston Technique®, solving the handoff problem at scale.",
-      icon: "Building"
-    }
-  ];
-
-  const philosophyPillars = [
-    {
-      icon: "Target",
-      title: "Strategic Precision",
-      description: "Every creative decision backed by data-driven strategy and measurable outcomes."
-    },
-    {
-      icon: "Zap", 
-      title: "Technical Execution",
-      description: "Building the infrastructure that makes bold marketing visions sustainable and scalable."
-    },
-    {
-      icon: "Users",
-      title: "Collaborative Leadership", 
-      description: "Bridging teams and translating between creative and technical perspectives."
-    }
-  ];
-
   return (
     <div className="min-h-screen bg-background">
       <Header />
       {/* Hero Section */}
       <section className="py-20 lg:py-32">
         <div className="max-w-4xl mx-auto px-6 lg:px-8">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -138,20 +89,20 @@ const AboutMePage = () => {
             <h1 className="text-4xl lg:text-5xl font-bold text-text-primary mb-8 text-center">
               My Story: The Architect in the Marketing Room
             </h1>
-            
+
             <div className="prose prose-lg max-w-none text-text-secondary leading-relaxed space-y-6">
               <p className="text-xl lg:text-2xl text-text-primary font-medium leading-relaxed">
                 "Great marketing ideas often break at the handoff—the critical point where a creative vision meets the complex reality of technical execution.
               </p>
-              
+
               <p className="text-lg leading-relaxed">
                 My career has been built to solve this problem. I'm Jacob Darling, a marketing leader who operates as both a brand strategist and a systems architect.
               </p>
-              
+
               <p className="text-lg leading-relaxed">
                 On one side, I direct bold rebrands, craft compelling narratives, and launch creative campaigns. On the other, I design and build the underlying technical infrastructure—the CRM logic, automation workflows, and web architecture—that makes those campaigns scalable, measurable, and sustainable.
               </p>
-              
+
               <p className="text-lg leading-relaxed">
                 This hybrid approach allows me to create deeply integrated solutions that don't just look good, but function brilliantly. I thrive on turning abstract goals into powerful, revenue-focused marketing engines."
               </p>
@@ -174,7 +125,7 @@ const AboutMePage = () => {
           <div className="relative">
             {/* Timeline line */}
             <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-border h-full hidden lg:block"></div>
-            
+
             <div className="space-y-16">
               {timelineItems?.map((item, index) => (
                 <motion.div
@@ -189,7 +140,7 @@ const AboutMePage = () => {
                 >
                   {/* Timeline dot */}
                   <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-conversion rounded-full border-4 border-background z-10 hidden lg:block"></div>
-                  
+
                   {/* Content card */}
                   <div className={`w-full lg:w-5/12 ${index % 2 === 0 ? 'lg:pr-16' : 'lg:pl-16'}`}>
                     <div className="bg-card border border-border rounded-xl p-8 hover:shadow-lg transition-all duration-300 hover:scale-[1.02]">
@@ -202,7 +153,7 @@ const AboutMePage = () => {
                           <div className="text-sm text-text-secondary">{item?.period}</div>
                         </div>
                       </div>
-                      
+
                       <h3 className="text-xl font-bold text-text-primary mb-3">{item?.title}</h3>
                       <p className="text-text-secondary leading-relaxed">{item?.description}</p>
                     </div>
@@ -239,7 +190,7 @@ const AboutMePage = () => {
                   <div className="w-16 h-16 bg-gradient-to-br from-conversion via-accent to-primary rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:shadow-lg transition-all duration-300">
                     <Icon name={pillar?.icon} size={28} className="text-white" />
                   </div>
-                  
+
                   <h3 className="text-xl font-bold text-text-primary mb-4">{pillar?.title}</h3>
                   <p className="text-text-secondary leading-relaxed">{pillar?.description}</p>
                 </div>
@@ -264,7 +215,7 @@ const AboutMePage = () => {
             <div className="space-y-8">
               {[
                 { skill: "Marketing Strategy", level: 95, color: "bg-conversion" },
-                { skill: "Brand Development", level: 90, color: "bg-accent" }, 
+                { skill: "Brand Development", level: 90, color: "bg-accent" },
                 { skill: "Marketing Automation", level: 88, color: "bg-primary" },
                 { skill: "CRM Architecture", level: 85, color: "bg-trust-builder" },
                 { skill: "Systems Integration", level: 82, color: "bg-cta-warm" }
@@ -312,16 +263,16 @@ const AboutMePage = () => {
             <p className="text-xl mb-8 opacity-90">
               Let's discuss how strategic thinking meets technical execution in your next project.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a 
+              <a
                 href="/contact"
                 className="bg-white text-conversion px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-all duration-300 hover:scale-[1.05] flex items-center"
               >
                 <Icon name="Calendar" size={20} className="mr-2" />
                 Schedule a Meeting
               </a>
-              <a 
+              <a
                 href="/resume"
                 className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-conversion transition-all duration-300 flex items-center"
               >

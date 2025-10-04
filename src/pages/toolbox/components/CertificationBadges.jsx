@@ -6,8 +6,8 @@ const CertificationBadges = ({ certifications }) => {
   const [selectedCert, setSelectedCert] = useState(null);
   const [filter, setFilter] = useState('all');
 
-  const filteredCertifications = filter === 'all' 
-    ? certifications 
+  const filteredCertifications = filter === 'all'
+    ? certifications
     : certifications?.filter(cert => cert?.status === filter);
 
   const getStatusColor = (status) => {
@@ -63,10 +63,11 @@ const CertificationBadges = ({ certifications }) => {
 
               {/* Provider logo */}
               <div className="w-16 h-16 rounded-lg overflow-hidden mb-4 bg-background">
-                <img 
+                <img
                   src={getProviderLogo(cert?.provider)}
-                  alt={cert?.provider}
+                  alt={cert?.provider || 'Certification provider logo'}
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
 
@@ -76,7 +77,7 @@ const CertificationBadges = ({ certifications }) => {
                   {cert?.name}
                 </h4>
                 <p className="text-sm text-muted-foreground">{cert?.provider}</p>
-                
+
                 <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                   <Icon name="Calendar" size={14} />
                   <span>Issued {cert?.issueDate}</span>
@@ -140,7 +141,7 @@ const CertificationBadges = ({ certifications }) => {
               <div className="flex items-start justify-between mb-6">
                 <div className="flex items-center space-x-4">
                   <div className="w-16 h-16 rounded-lg overflow-hidden bg-background">
-                    <img 
+                    <img
                       src={getProviderLogo(selectedCert?.provider)}
                       alt={selectedCert?.provider}
                       className="w-full h-full object-cover"
@@ -176,7 +177,7 @@ const CertificationBadges = ({ certifications }) => {
                       <span className="text-card-foreground">{selectedCert?.issueDate}</span>
                     </div>
                   </div>
-                  
+
                   {selectedCert?.expiryDate && (
                     <div>
                       <h3 className="font-semibold text-card-foreground mb-2">Expiry Date</h3>
@@ -203,7 +204,7 @@ const CertificationBadges = ({ certifications }) => {
                     <h3 className="font-semibold text-card-foreground mb-2">Skills Covered</h3>
                     <div className="flex flex-wrap gap-2">
                       {selectedCert?.skills?.map((skill, idx) => (
-                        <span 
+                        <span
                           key={idx}
                           className="px-2 py-1 bg-muted rounded-full text-xs text-muted-foreground"
                         >
@@ -221,7 +222,7 @@ const CertificationBadges = ({ certifications }) => {
                       <span className="text-sm font-medium">Verified Credential</span>
                     </div>
                   )}
-                  
+
                   {selectedCert?.verificationUrl && (
                     <Button
                       variant="outline"

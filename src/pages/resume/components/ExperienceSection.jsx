@@ -81,6 +81,23 @@ const ExperienceSection = () => {
         "Technical Implementation: Integrated advanced functionality into the patient experience, including the Clockwise MD online check-in system to reduce wait times and streamline onboarding"
       ],
       technologies: ["Healthcare Marketing", "Website Development", "Patient Management Systems", "Digital Strategy", "ROI Optimization"]
+    },
+    {
+      id: 6,
+      title: "Owner & Lead Barber",
+      company: "Hoosier Boy Barbershop",
+      location: "Indianapolis, IN",
+      duration: "Jan 2020 – Present",
+      type: "Full-time",
+      logo: "/assets/images/experience/Hoosier Boy/Fav.png",
+      screenshot: "/assets/images/experience/Hoosier Boy/Screenshot of Home - Hoosier Boy Barbershop.jpg",
+      video: "/assets/images/experience/Hoosier Boy/Screen recording (2).webm",
+      achievements: [
+        "Established a thriving barbershop business, building a loyal customer base through exceptional service and community engagement.",
+        "Designed and launched a modern, user-friendly website to streamline appointment bookings and showcase services.",
+        "Produced promotional videos to enhance online presence and attract new clients."
+      ],
+      technologies: ["Website Development", "Video Production", "Customer Relationship Management", "Marketing Strategy"]
     }
   ];
 
