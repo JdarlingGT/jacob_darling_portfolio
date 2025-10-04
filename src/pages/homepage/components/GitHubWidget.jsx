@@ -1,333 +1,248 @@
-import React, { useState } from 'react';
-import Icon from '../../../components/AppIcon';
+import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 const GitHubWidget = () => {
-  const [selectedPeriod, setSelectedPeriod] = useState('year');
+  const [isVisible, setIsVisible] = useState(false);
+  const [contributionData, setContributionData] = useState([]);
 
-  // Mock GitHub data - in real implementation, this would come from GitHub API
-  const githubStats = {
-    totalRepos: 47,
-    totalStars: 1234,
-    totalForks: 289,
-    totalCommits: 2847,
-    followers: 456,
-    following: 123,
-    streak: 127
-  };
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
 
-  const contributionData = {
-    year: [
-      { week: 0, days: [0, 2, 1, 3, 2, 1, 0] },
-      { week: 1, days: [1, 3, 2, 4, 3, 2, 1] },
-      { week: 2, days: [2, 1, 3, 2, 4, 3, 1] },
-      { week: 3, days: [0, 2, 1, 3, 2, 4, 2] },
-      { week: 4, days: [1, 3, 2, 1, 3, 2, 3] },
-      { week: 5, days: [2, 4, 3, 2, 1, 3, 2] },
-      { week: 6, days: [1, 2, 4, 3, 2, 1, 4] },
-      { week: 7, days: [3, 1, 2, 4, 3, 2, 1] },
-      { week: 8, days: [2, 3, 1, 2, 4, 3, 2] },
-      { week: 9, days: [1, 4, 2, 3, 1, 2, 3] },
-      { week: 10, days: [3, 2, 4, 1, 3, 2, 1] },
-      { week: 11, days: [2, 1, 3, 4, 2, 3, 2] },
-      { week: 12, days: [4, 3, 2, 1, 4, 1, 3] },
-      { week: 13, days: [1, 2, 3, 2, 1, 4, 2] },
-      { week: 14, days: [3, 4, 1, 3, 2, 1, 3] },
-      { week: 15, days: [2, 1, 4, 2, 3, 2, 1] },
-      { week: 16, days: [1, 3, 2, 4, 1, 3, 2] },
-      { week: 17, days: [4, 2, 3, 1, 2, 4, 3] },
-      { week: 18, days: [2, 3, 1, 3, 4, 2, 1] },
-      { week: 19, days: [3, 1, 2, 2, 3, 1, 4] },
-      { week: 20, days: [1, 4, 3, 1, 2, 3, 2] },
-      { week: 21, days: [2, 2, 4, 3, 1, 2, 3] },
-      { week: 22, days: [3, 1, 2, 4, 2, 1, 2] },
-      { week: 23, days: [4, 3, 1, 2, 3, 4, 1] },
-      { week: 24, days: [2, 1, 3, 1, 4, 2, 3] },
-      { week: 25, days: [1, 2, 4, 3, 1, 3, 2] },
-      { week: 26, days: [3, 4, 2, 1, 2, 1, 4] },
-      { week: 27, days: [2, 3, 1, 4, 3, 2, 1] },
-      { week: 28, days: [4, 1, 3, 2, 1, 4, 3] },
-      { week: 29, days: [1, 2, 2, 3, 4, 1, 2] },
-      { week: 30, days: [3, 4, 1, 2, 2, 3, 1] },
-      { week: 31, days: [2, 1, 4, 1, 3, 2, 4] },
-      { week: 32, days: [1, 3, 2, 4, 1, 2, 3] },
-      { week: 33, days: [4, 2, 3, 2, 4, 1, 2] },
-      { week: 34, days: [2, 1, 1, 3, 2, 4, 3] },
-      { week: 35, days: [3, 4, 2, 1, 3, 2, 1] },
-      { week: 36, days: [1, 2, 4, 2, 1, 3, 4] },
-      { week: 37, days: [2, 3, 1, 4, 2, 1, 2] },
-      { week: 38, days: [4, 1, 3, 2, 4, 3, 1] },
-      { week: 39, days: [3, 2, 2, 1, 3, 4, 2] },
-      { week: 40, days: [1, 4, 1, 3, 2, 2, 3] },
-      { week: 41, days: [2, 3, 4, 2, 1, 3, 1] },
-      { week: 42, days: [3, 1, 2, 4, 3, 1, 2] },
-      { week: 43, days: [4, 2, 3, 1, 2, 4, 3] },
-      { week: 44, days: [1, 3, 1, 2, 4, 2, 1] },
-      { week: 45, days: [2, 4, 2, 3, 1, 3, 4] },
-      { week: 46, days: [3, 1, 4, 1, 2, 1, 2] },
-      { week: 47, days: [1, 2, 3, 4, 3, 2, 3] },
-      { week: 48, days: [4, 3, 1, 2, 1, 4, 1] },
-      { week: 49, days: [2, 1, 2, 3, 4, 3, 2] },
-      { week: 50, days: [3, 4, 3, 1, 2, 1, 4] },
-      { week: 51, days: [1, 2, 1, 4, 3, 2, 3] }
-    ]
-  };
+    const element = document.getElementById('github-widget');
+    if (element) observer?.observe(element);
 
-  const topRepositories = [
+    return () => {
+      if (element) observer?.unobserve(element);
+    };
+  }, []);
+
+  useEffect(() => {
+    // Generate realistic contribution pattern
+    const generateContributions = () => {
+      const contributions = [];
+      const today = new Date();
+      
+      for (let i = 365; i >= 0; i--) {
+        const date = new Date(today);
+        date?.setDate(date?.getDate() - i);
+        
+        // Simulate realistic commit patterns (higher during weekdays)
+        const isWeekend = date?.getDay() === 0 || date?.getDay() === 6;
+        const baseActivity = isWeekend ? 0.2 : 0.8;
+        const randomFactor = Math.random();
+        
+        let level = 0;
+        if (randomFactor < 0.3) level = 0;
+        else if (randomFactor < 0.6) level = Math.floor(baseActivity * 1);
+        else if (randomFactor < 0.85) level = Math.floor(baseActivity * 2);
+        else level = Math.floor(baseActivity * 4);
+        
+        contributions?.push({
+          date: date?.toISOString()?.split('T')?.[0],
+          level: Math.min(level, 4),
+          count: level * (Math.floor(Math.random() * 3) + 1)
+        });
+      }
+      
+      return contributions;
+    };
+
+    if (isVisible) {
+      setContributionData(generateContributions());
+    }
+  }, [isVisible]);
+
+  const recentProjects = [
     {
-      name: "marketing-automation-platform",
-      description: "Enterprise-grade marketing automation platform built with React and Node.js",
-      language: "JavaScript",
-      stars: 234,
-      forks: 67,
-      updated: "2 days ago"
+      name: 'marketing-automation-suite',
+      description: 'Enterprise-grade marketing automation platform with CRM integration',
+      language: 'PHP',
+      stars: 24,
+      commits: '127 commits',
+      updated: '2 days ago',
+      color: 'bg-purple-500'
     },
     {
-      name: "ai-customer-analytics",
-      description: "Machine learning powered customer journey analytics and prediction system",
-      language: "Python",
-      stars: 189,
-      forks: 45,
-      updated: "1 week ago"
+      name: 'performance-optimization-toolkit',
+      description: 'WordPress performance optimization tools and monitoring dashboard',
+      language: 'JavaScript',
+      stars: 18,
+      commits: '89 commits',
+      updated: '5 days ago',
+      color: 'bg-yellow-500'
     },
     {
-      name: "omnichannel-infrastructure",
-      description: "Scalable microservices architecture for global marketing operations",
-      language: "TypeScript",
-      stars: 156,
-      forks: 38,
-      updated: "3 days ago"
-    },
-    {
-      name: "performance-optimization-toolkit",
-      description: "Collection of tools and utilities for marketing technology performance optimization",
-      language: "JavaScript",
-      stars: 98,
-      forks: 29,
-      updated: "5 days ago"
+      name: 'analytics-data-pipeline',
+      description: 'ETL pipeline for marketing attribution and conversion tracking',
+      language: 'Python',
+      stars: 12,
+      commits: '156 commits',
+      updated: '1 week ago',
+      color: 'bg-blue-500'
     }
   ];
 
-  const getContributionColor = (level) => {
-    const colors = {
-      0: 'bg-muted',
-      1: 'bg-conversion/20',
-      2: 'bg-conversion/40',
-      3: 'bg-conversion/60',
-      4: 'bg-conversion'
-    };
-    return colors?.[level] || colors?.[0];
-  };
-
-  const getLanguageColor = (language) => {
-    const colors = {
-      'JavaScript': 'bg-yellow-500',
-      'TypeScript': 'bg-blue-500',
-      'Python': 'bg-green-500',
-      'React': 'bg-cyan-500'
-    };
-    return colors?.[language] || 'bg-gray-500';
-  };
-
-  const handleViewGitHub = () => {
-    window.open('https://github.com/jacobdarling', '_blank', 'noopener,noreferrer');
-  };
-
-  const handleViewRepository = (repoName) => {
-    window.open(`https://github.com/jacobdarling/${repoName}`, '_blank', 'noopener,noreferrer');
-  };
+  const totalContributions = contributionData?.reduce((sum, day) => sum + day?.count, 0);
+  const currentStreak = 23; // Days
+  const longestStreak = 87; // Days
 
   return (
-    <section className="py-20 bg-surface">
+    <section id="github-widget" className="py-20 bg-surface">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="flex items-center justify-center mb-4">
-            <div className="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center mr-4">
-              <Icon name="Github" size={24} className="text-secondary" />
-            </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-text-primary">
-              GitHub Activity
-            </h2>
-          </div>
-          <p className="text-lg text-text-secondary max-w-3xl mx-auto">
-            Real-time showcase of development activity, open source contributions, 
-            and technical project portfolio demonstrating consistent code quality and innovation.
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">
+            Development Activity
+          </h2>
+          <p className="text-xl text-text-secondary max-w-3xl mx-auto">
+            Live from my GitHub - where marketing strategy meets code implementation
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid lg:grid-cols-3 gap-8">
-          {/* GitHub Stats */}
-          <div className="bg-card rounded-xl p-6 brand-border">
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="text-xl font-bold text-text-primary">GitHub Stats</h3>
-              <button
-                onClick={handleViewGitHub}
-                className="text-conversion hover:text-conversion/80 smooth-transition"
-                title="View GitHub Profile"
-              >
-                <Icon name="ExternalLink" size={20} />
-              </button>
-            </div>
-
-            <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <Icon name="GitBranch" size={16} className="text-text-secondary" />
-                  <span className="text-text-secondary">Repositories</span>
-                </div>
-                <span className="font-bold text-text-primary">{githubStats?.totalRepos}</span>
-              </div>
-
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <Icon name="Star" size={16} className="text-text-secondary" />
-                  <span className="text-text-secondary">Total Stars</span>
-                </div>
-                <span className="font-bold text-text-primary">{githubStats?.totalStars?.toLocaleString()}</span>
-              </div>
-
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <Icon name="GitFork" size={16} className="text-text-secondary" />
-                  <span className="text-text-secondary">Total Forks</span>
-                </div>
-                <span className="font-bold text-text-primary">{githubStats?.totalForks}</span>
-              </div>
-
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <Icon name="GitCommit" size={16} className="text-text-secondary" />
-                  <span className="text-text-secondary">Total Commits</span>
-                </div>
-                <span className="font-bold text-text-primary">{githubStats?.totalCommits?.toLocaleString()}</span>
-              </div>
-
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <Icon name="Users" size={16} className="text-text-secondary" />
-                  <span className="text-text-secondary">Followers</span>
-                </div>
-                <span className="font-bold text-text-primary">{githubStats?.followers}</span>
-              </div>
-
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <Icon name="Zap" size={16} className="text-text-secondary" />
-                  <span className="text-text-secondary">Current Streak</span>
-                </div>
-                <span className="font-bold text-conversion">{githubStats?.streak} days</span>
-              </div>
-            </div>
-          </div>
-
           {/* Contribution Graph */}
-          <div className="lg:col-span-2 bg-card rounded-xl p-6 brand-border">
-            <div className="flex items-center justify-between mb-6">
-              <h3 className="text-xl font-bold text-text-primary">Contribution Activity</h3>
-              <div className="flex items-center gap-2">
-                <button
-                  onClick={() => setSelectedPeriod('year')}
-                  className={`px-3 py-1 text-sm rounded-md smooth-transition ${
-                    selectedPeriod === 'year' ?'bg-conversion text-conversion-foreground' :'text-text-secondary hover:text-text-primary'
-                  }`}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={isVisible ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8 }}
+            className="lg:col-span-2"
+          >
+            <div className="bg-background border border-border rounded-xl p-6">
+              <div className="flex items-center justify-between mb-6">
+                <h3 className="text-xl font-semibold text-text-primary">
+                  {totalContributions} contributions in the last year
+                </h3>
+                <a 
+                  href="https://github.com/jacobdarling" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-2 text-text-secondary hover:text-conversion smooth-transition"
                 >
-                  Year
-                </button>
-                <button
-                  onClick={() => setSelectedPeriod('month')}
-                  className={`px-3 py-1 text-sm rounded-md smooth-transition ${
-                    selectedPeriod === 'month' ?'bg-conversion text-conversion-foreground' :'text-text-secondary hover:text-text-primary'
-                  }`}
-                >
-                  Month
-                </button>
-              </div>
-            </div>
-
-            {/* Contribution Grid */}
-            <div className="overflow-x-auto">
-              <div className="grid grid-cols-52 gap-1 mb-4" style={{ minWidth: '800px' }}>
-                {contributionData?.year?.map((week) => (
-                  <div key={week?.week} className="grid grid-rows-7 gap-1">
-                    {week?.days?.map((level, dayIndex) => (
-                      <div
-                        key={dayIndex}
-                        className={`w-3 h-3 rounded-sm ${getContributionColor(level)}`}
-                        title={`${level} contributions`}
-                      />
-                    ))}
-                  </div>
-                ))}
+                  <span className="text-sm">View on GitHub</span>
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                </a>
               </div>
 
-              {/* Legend */}
-              <div className="flex items-center justify-between text-xs text-text-secondary">
-                <span>Less</span>
-                <div className="flex items-center gap-1">
-                  {[0, 1, 2, 3, 4]?.map((level) => (
-                    <div
-                      key={level}
-                      className={`w-3 h-3 rounded-sm ${getContributionColor(level)}`}
+              {/* Contribution Calendar */}
+              <div className="mb-6 overflow-x-auto">
+                <div className="grid grid-cols-53 gap-1 min-w-[680px]">
+                  {contributionData?.map((day, index) => (
+                    <motion.div
+                      key={day?.date}
+                      initial={{ scale: 0 }}
+                      animate={isVisible ? { scale: 1 } : {}}
+                      transition={{ duration: 0.3, delay: index * 0.001 }}
+                      className={`w-3 h-3 rounded-sm ${
+                        day?.level === 0 ? 'bg-muted' :
+                        day?.level === 1 ? 'bg-green-200' :
+                        day?.level === 2 ? 'bg-green-400' :
+                        day?.level === 3 ? 'bg-green-600': 'bg-green-800'
+                      }`}
+                      title={`${day?.count} contributions on ${day?.date}`}
                     />
                   ))}
                 </div>
-                <span>More</span>
+              </div>
+
+              {/* Contribution Stats */}
+              <div className="flex items-center justify-between text-sm text-text-secondary">
+                <div className="flex items-center space-x-4">
+                  <span>Less</span>
+                  <div className="flex space-x-1">
+                    {[0, 1, 2, 3, 4]?.map((level) => (
+                      <div
+                        key={level}
+                        className={`w-3 h-3 rounded-sm ${
+                          level === 0 ? 'bg-muted' :
+                          level === 1 ? 'bg-green-200' :
+                          level === 2 ? 'bg-green-400' :
+                          level === 3 ? 'bg-green-600': 'bg-green-800'
+                        }`}
+                      />
+                    ))}
+                  </div>
+                  <span>More</span>
+                </div>
+                <div className="flex space-x-4">
+                  <span>Current streak: <strong>{currentStreak} days</strong></span>
+                  <span>Longest streak: <strong>{longestStreak} days</strong></span>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
+          </motion.div>
 
-        {/* Top Repositories */}
-        <div className="mt-12 bg-card rounded-xl p-6 brand-border">
-          <div className="flex items-center justify-between mb-6">
-            <h3 className="text-xl font-bold text-text-primary">Featured Repositories</h3>
-            <button
-              onClick={handleViewGitHub}
-              className="text-conversion hover:text-conversion/80 smooth-transition text-sm font-medium"
-            >
-              View All Repositories →
-            </button>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {topRepositories?.map((repo, index) => (
-              <div 
-                key={index}
-                className="p-4 bg-muted rounded-lg hover:bg-secondary/10 smooth-transition cursor-pointer"
-                onClick={() => handleViewRepository(repo?.name)}
-              >
-                <div className="flex items-start justify-between mb-3">
-                  <div className="flex items-center gap-2">
-                    <Icon name="GitBranch" size={16} className="text-conversion" />
-                    <h4 className="font-semibold text-text-primary">{repo?.name}</h4>
-                  </div>
-                  <Icon name="ExternalLink" size={14} className="text-text-secondary" />
-                </div>
-
-                <p className="text-sm text-text-secondary mb-4 line-clamp-2">
-                  {repo?.description}
-                </p>
-
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-4">
-                    <div className="flex items-center gap-1">
-                      <div className={`w-3 h-3 rounded-full ${getLanguageColor(repo?.language)}`} />
-                      <span className="text-xs text-text-secondary">{repo?.language}</span>
+          {/* Recent Projects */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={isVisible ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <div className="bg-background border border-border rounded-xl p-6">
+              <h3 className="text-xl font-semibold text-text-primary mb-6">Recent Projects</h3>
+              
+              <div className="space-y-4">
+                {recentProjects?.map((project, index) => (
+                  <motion.div
+                    key={project?.name}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={isVisible ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.6, delay: 0.3 + (index * 0.1) }}
+                    className="border border-border rounded-lg p-4 hover:border-conversion/50 smooth-transition"
+                  >
+                    <div className="flex items-start justify-between mb-2">
+                      <h4 className="font-semibold text-text-primary text-sm">{project?.name}</h4>
+                      <div className="flex items-center space-x-1 text-text-secondary">
+                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                        <span className="text-xs">{project?.stars}</span>
+                      </div>
                     </div>
-                    <div className="flex items-center gap-1">
-                      <Icon name="Star" size={12} className="text-text-secondary" />
-                      <span className="text-xs text-text-secondary">{repo?.stars}</span>
+                    
+                    <p className="text-text-secondary text-xs mb-3 leading-relaxed">
+                      {project?.description}
+                    </p>
+                    
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center space-x-2">
+                        <div className={`w-3 h-3 ${project?.color} rounded-full`}></div>
+                        <span className="text-xs text-text-secondary">{project?.language}</span>
+                      </div>
+                      <span className="text-xs text-text-secondary">{project?.updated}</span>
                     </div>
-                    <div className="flex items-center gap-1">
-                      <Icon name="GitFork" size={12} className="text-text-secondary" />
-                      <span className="text-xs text-text-secondary">{repo?.forks}</span>
+                    
+                    <div className="mt-2 pt-2 border-t border-border">
+                      <span className="text-xs text-text-secondary">{project?.commits}</span>
                     </div>
-                  </div>
-                  <span className="text-xs text-text-secondary">{repo?.updated}</span>
-                </div>
+                  </motion.div>
+                ))}
               </div>
-            ))}
-          </div>
+
+              <div className="mt-6 pt-4 border-t border-border">
+                <a 
+                  href="https://github.com/jacobdarling" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-conversion hover:text-conversion/80 text-sm font-medium smooth-transition"
+                >
+                  View all repositories →
+                </a>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

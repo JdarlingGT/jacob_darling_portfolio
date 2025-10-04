@@ -5,11 +5,11 @@ import Button from '../../../components/ui/Button';
 
 const ResumeHeader = ({ onDownload }) => {
   const contactInfo = [
-    { icon: 'Mail', text: 'jacob.darling@professionalwebsites.com', type: 'email' },
-    { icon: 'Phone', text: '+1 (317) 555-0123', type: 'phone' },
+    { icon: 'Mail', text: 'hoosierdarling@gmail.com', type: 'email' },
+    { icon: 'Phone', text: '317 443-8091', type: 'phone' },
     { icon: 'MapPin', text: 'Indianapolis, IN', type: 'location' },
     { icon: 'Linkedin', text: 'linkedin.com/in/jacobdarling', type: 'linkedin' },
-    { icon: 'Github', text: 'github.com/jacobdarling', type: 'github' }
+    { icon: 'Github', text: 'github.com/JdarlingGT', type: 'github' }
   ];
 
   return (

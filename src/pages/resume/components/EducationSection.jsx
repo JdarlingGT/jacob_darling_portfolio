@@ -1,41 +1,19 @@
 import React from 'react';
 import Icon from '../../../components/AppIcon';
+import Image from '../../../components/AppImage';
 
 const EducationSection = () => {
   const education = [
     {
       id: 1,
-      degree: "Master of Business Administration (MBA)",
-      field: "Marketing & Technology Management",
-      school: "Stanford Graduate School of Business",
-      location: "Stanford, CA",
-      duration: "09/2014 - 06/2016",
-      gpa: "3.8/4.0",
-      honors: "Magna Cum Laude",
-      coursework: [
-        "Digital Marketing Strategy",
-        "Data Analytics for Marketing",
-        "Technology Innovation Management",
-        "Consumer Behavior Analysis",
-        "Marketing Automation Systems"
-      ]
-    },
-    {
-      id: 2,
-      degree: "Bachelor of Science (BS)",
-      field: "Computer Science with Marketing Minor",
-      school: "University of California, Berkeley",
-      location: "Berkeley, CA",
-      duration: "08/2010 - 05/2014",
-      gpa: "3.7/4.0",
-      honors: "Cum Laude",
-      coursework: [
-        "Database Systems",
-        "Web Development",
-        "Statistics & Probability",
-        "Marketing Research Methods",
-        "Consumer Psychology"
-      ]
+      degree: "Bachelor of Science in Business Management - School of Public and Environmental Affairs",
+      school: "Indiana University Bloomington",
+      location: "Bloomington, IN",
+      duration: "2004 – 2008",
+      achievement: {
+        title: "Target Marketing Competition Winner (2006)",
+        description: "Led a team to first place in a university-wide competition by developing an innovative marketing strategy that was recognized by a panel of industry judges."
+      }
     }
   ];
 
@@ -104,52 +82,47 @@ const EducationSection = () => {
         <div className="space-y-8">
           {education?.map((edu, index) => (
             <div key={edu?.id} className="relative">
-              {/* Timeline Line */}
-              {index !== education?.length - 1 && (
-                <div className="absolute left-6 top-16 w-0.5 h-full bg-border"></div>
-              )}
-              
               {/* Timeline Dot */}
               <div className="absolute left-4 top-6 w-4 h-4 bg-trust-builder rounded-full border-2 border-background"></div>
               
               {/* Content */}
               <div className="ml-16">
-                <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4">
-                  <div>
-                    <h3 className="text-xl font-semibold text-text-primary mb-1">{edu?.degree}</h3>
-                    <p className="text-trust-builder font-medium mb-2">{edu?.field}</p>
-                    <div className="flex items-center space-x-4 text-text-secondary mb-2">
-                      <span className="font-medium">{edu?.school}</span>
+                <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-6">
+                  <div className="flex-1">
+                    <h3 className="text-xl font-semibold text-text-primary mb-2">{edu?.degree}</h3>
+                    <div className="flex items-center space-x-4 text-text-secondary mb-4">
+                      <span className="font-medium text-trust-builder text-lg">{edu?.school}</span>
                       <span className="flex items-center space-x-1">
                         <Icon name="MapPin" size={14} />
                         <span>{edu?.location}</span>
                       </span>
                     </div>
-                    <div className="flex items-center space-x-4 text-sm text-text-secondary">
-                      <span>GPA: {edu?.gpa}</span>
-                      <span className="px-2 py-1 bg-trust-builder/10 text-trust-builder rounded text-xs">
-                        {edu?.honors}
-                      </span>
-                    </div>
                   </div>
-                  <div className="flex items-center space-x-2 text-text-secondary">
-                    <Icon name="Calendar" size={16} />
-                    <span className="font-medium">{edu?.duration}</span>
+                  <div className="flex flex-col items-end space-y-4">
+                    <div className="flex items-center space-x-2 text-text-secondary">
+                      <Icon name="Calendar" size={16} />
+                      <span className="font-medium">{edu?.duration}</span>
+                    </div>
+                    {/* Indiana University Logo */}
+                    <div className="w-20 h-20 lg:w-24 lg:h-24 flex items-center justify-center bg-white rounded-lg border-2 border-trust-builder/20 p-2">
+                      <Image
+                        src="/assets/images/Indiana_University_seal.svg-1759610505683.png"
+                        alt="Indiana University Logo"
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
                   </div>
                 </div>
 
-                {/* Relevant Coursework */}
-                <div>
-                  <h4 className="text-sm font-semibold text-text-primary mb-3">Relevant Coursework</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {edu?.coursework?.map((course, courseIndex) => (
-                      <span
-                        key={courseIndex}
-                        className="px-3 py-1 bg-muted text-text-secondary text-sm rounded-full border border-border"
-                      >
-                        {course}
-                      </span>
-                    ))}
+                {/* Key Achievement */}
+                <div className="bg-trust-builder/10 border border-trust-builder/20 rounded-lg p-6">
+                  <h4 className="text-lg font-semibold text-text-primary mb-3 flex items-center space-x-2">
+                    <Icon name="Trophy" size={18} className="text-trust-builder" />
+                    <span>Key Achievement</span>
+                  </h4>
+                  <div>
+                    <h5 className="font-semibold text-trust-builder mb-2">{edu?.achievement?.title}</h5>
+                    <p className="text-text-secondary leading-relaxed">{edu?.achievement?.description}</p>
                   </div>
                 </div>
               </div>
@@ -157,6 +130,7 @@ const EducationSection = () => {
           ))}
         </div>
       </div>
+
       {/* Certifications */}
       <div className="bg-card border border-border rounded-lg p-8">
         <div className="flex items-center space-x-3 mb-8">

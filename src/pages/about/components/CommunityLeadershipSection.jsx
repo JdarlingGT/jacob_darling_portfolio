@@ -16,7 +16,8 @@ const CommunityLeadershipSection = () => {
         "Vendor management and property maintenance coordination"
       ],
       icon: "Home",
-      color: "conversion"
+      color: "conversion",
+      logo: "/assets/images/Logo-1759610700707.png"
     },
     {
       id: 2,
@@ -32,6 +33,7 @@ const CommunityLeadershipSection = () => {
       ],
       icon: "Palette",
       color: "trust-builder",
+      logo: "/assets/images/PC-Logo-1759610614733.jpg",
       metrics: {
         artists: "200+",
         revenue: "$46,000+",
@@ -67,9 +69,19 @@ const CommunityLeadershipSection = () => {
             >
               {/* Header */}
               <div className="flex items-start space-x-4 mb-6">
-                <div className={`w-14 h-14 rounded-lg bg-${role?.color} flex items-center justify-center flex-shrink-0`}>
-                  <Icon name={role?.icon} size={24} className={`text-${role?.color}-foreground`} />
-                </div>
+                {role?.logo ? (
+                  <div className="w-14 h-14 rounded-lg bg-white flex items-center justify-center flex-shrink-0 p-2">
+                    <img 
+                      src={role?.logo} 
+                      alt={`${role?.organization} logo`}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                ) : (
+                  <div className={`w-14 h-14 rounded-lg bg-${role?.color} flex items-center justify-center flex-shrink-0`}>
+                    <Icon name={role?.icon} size={24} className={`text-${role?.color}-foreground`} />
+                  </div>
+                )}
                 <div className="flex-1">
                   <h3 className="text-xl font-bold text-text-primary mb-1">
                     {role?.title}

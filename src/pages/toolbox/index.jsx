@@ -8,6 +8,13 @@ const Toolbox = () => {
   const [activeSection, setActiveSection] = useState('core-strengths');
   const [expandedPlaybook, setExpandedPlaybook] = useState(null);
   const [showBioModal, setShowBioModal] = useState(false);
+  const [hoveredCard, setHoveredCard] = useState(null);
+  const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
+
+  // Handle tooltip positioning on mouse move
+  const handleMouseMove = (e) => {
+    setTooltipPosition({ x: e?.clientX, y: e?.clientY });
+  };
 
   // Real content data based on the provided content
   const sections = [
@@ -42,6 +49,8 @@ const Toolbox = () => {
       id: 1,
       title: 'Web Performance & Optimization',
       description: 'I tune the stack end-to-end: CDN strategy, cache keys and TTLs, PHP/OPcache, query hygiene, and front-end bloat control. I\'ve cut TTFB on high-traffic WordPress installs, trimmed autoloaded options, and dialed in page-level exclusions so dynamic views stay fast while Core Web Vitals stay green.',
+      hoverDescription: 'I engineer multi-layered caching strategies that deliver sub-second load times and a snappy real-user \'feel.\' By combining a **LiteSpeed** server with **Redis object caching** and an **86% hit-ratio Cloudflare edge**, I reduce server load and serve pre-built HTML instantly. My approach includes deep asset optimization—like **Brotli compression** and creating **WebP versions** of images—that has saved over **40 MB** in initial payload and cut HTTP requests by **35-40%**.',
+      clickLink: '/deep-dives/the-engine-room',
       icon: 'Gauge',
       skills: ['CDN Strategy', 'PHP/OPcache', 'Query Optimization', 'Core Web Vitals']
     },
@@ -49,6 +58,8 @@ const Toolbox = () => {
       id: 2,
       title: 'Security & Resilience',
       description: 'Layered defenses at the edge and origin: WAF rulesets, bot mitigation, rate-limiting, security headers, and origin hardening (Authenticated TLS, API key scoping). The result is a smaller attack surface, fewer brute-force floods, and steadier servers during campaigns and product drops.',
+      hoverDescription: 'My approach treats security as a proactive, multi-layered discipline. At the edge, I deploy Cloudflare\'s WAF to block common WordPress exploits like XML-RPC floods, enable \'Super Bot Fight Mode\' which neutralizes **~85,000 bad-bot hits per month**, and implement Authenticated Origin Pulls to prevent direct-to-origin spoofing. On the server, I harden the infrastructure with security headers like HSTS and CSP via `.htaccess` and ensure DNS integrity by implementing DNSSEC.',
+      clickLink: '/deep-dives/the-fortress',
       icon: 'Shield',
       skills: ['WAF Configuration', 'Bot Mitigation', 'Security Headers', 'TLS Implementation']
     },
@@ -56,6 +67,8 @@ const Toolbox = () => {
       id: 3,
       title: 'Analytics & Conversion Engineering',
       description: 'I build reliable tracking from the dataLayer up. Clean GTM containers, GA4 events that actually mirror business actions, and marketing pixels that only fire for real conversions. I normalize events (e.g., gravityFormSubmission, purchaseCompleted) so Ads and automation tools optimize on signal, not noise.',
+      hoverDescription: 'I build robust, end-to-end tracking systems that provide a single source of truth for campaign ROI. By writing custom **PHP hooks** to push `gravityFormSubmission` events to the dataLayer, I enable Google Ads to optimize for high-intent leads, not just clicks. I restructure GTM containers, implement **PixelYourSite PRO** for advanced event tracking, and reconfigure **Primary conversion actions** in Google Ads to ensure smart bidding is focused squarely on actual sales.',
+      clickLink: '/deep-dives/the-compass',
       icon: 'BarChart3',
       skills: ['GTM Architecture', 'GA4 Implementation', 'Event Tracking', 'Conversion Optimization']
     },
@@ -63,6 +76,8 @@ const Toolbox = () => {
       id: 4,
       title: 'Commerce + Learning Systems Architecture',
       description: 'I architect complex WordPress builds that tie together commerce, learning, and CRM: WooCommerce + LearnDash + CRM (FluentCRM/WP Fusion) + automation (Uncanny Automator). Products enroll users, completions unlock certificates, and forms drive tags and segments—no brittle one-offs.',
+      hoverDescription: 'I build automated data pipelines that create a frictionless customer journey. By integrating platforms like WooCommerce, LearnDash, and **FluentCRM** with tools like WP Fusion and **Uncanny Automator**, I eliminate manual data entry and create unified customer records. This powers hyper-targeted marketing and has led to a planned **15-20% site-wide speed boost** by moving CRM tasks to an isolated multisite instance.',
+      clickLink: '/deep-dives/the-conductor',
       icon: 'Layers',
       skills: ['WooCommerce', 'LearnDash', 'CRM Integration', 'Marketing Automation']
     },
@@ -70,6 +85,8 @@ const Toolbox = () => {
       id: 5,
       title: 'Ops, Dashboards & Content Systems',
       description: 'I build operational dashboards for events, providers, and instructors. I also create CEU/knowledge bases, bulk-prompt pipelines, and lightweight internal tools that help marketing and operations teams ship consistent, high-quality content and reports much faster.',
+      hoverDescription: 'I create custom solutions to eliminate internal friction and empower teams with actionable data. I built a custom **Instructor Dashboard** that uses **jQuery** for dynamic event filtering and pulls data directly from **FluentCRM** to provide missing context on instrument purchases. This work streamlines operations and supports personalized outreach, turning the website into a valuable internal tool for sales and support.',
+      clickLink: '/deep-dives/internal-tooling',
       icon: 'Dashboard',
       skills: ['Operational Dashboards', 'Content Systems', 'Process Automation', 'Team Tools']
     }
@@ -203,7 +220,6 @@ const Toolbox = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
       {/* Hero Section */}
       <section className="pt-24 pb-16 px-6 lg:px-8 bg-gradient-to-br from-accent/5 via-background to-conversion/5">
         <div className="max-w-7xl mx-auto">
@@ -250,7 +266,6 @@ const Toolbox = () => {
           </div>
         </div>
       </section>
-
       {/* Navigation Tabs */}
       <section className="px-6 lg:px-8 py-8 border-b border-border bg-card/50">
         <div className="max-w-7xl mx-auto">
@@ -272,11 +287,10 @@ const Toolbox = () => {
           </div>
         </div>
       </section>
-
       {/* Content Sections */}
       <section className="px-6 lg:px-8 py-16">
         <div className="max-w-7xl mx-auto">
-          {/* Core Strengths Section */}
+          {/* Enhanced Core Strengths Section */}
           {activeSection === 'core-strengths' && (
             <div>
               <div className="text-center mb-12">
@@ -292,14 +306,18 @@ const Toolbox = () => {
                 {coreStrengths?.map((strength) => (
                   <div
                     key={strength?.id}
-                    className="bg-card border border-border rounded-xl p-8 brand-shadow hover:shadow-lg smooth-transition"
+                    className="bg-card border border-border rounded-xl p-8 brand-shadow hover:shadow-lg smooth-transition cursor-pointer relative"
+                    onClick={() => window.location.href = strength?.clickLink}
+                    onMouseEnter={() => setHoveredCard(strength?.id)}
+                    onMouseLeave={() => setHoveredCard(null)}
+                    onMouseMove={handleMouseMove}
                   >
                     <div className="flex items-start space-x-4 mb-6">
                       <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
                         <Icon name={strength?.icon} size={24} className="text-accent" />
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold text-card-foreground mb-2">
+                        <h3 className="text-xl font-bold text-card-foreground mb-2 hover:text-accent smooth-transition">
                           {strength?.title}
                         </h3>
                       </div>
@@ -316,6 +334,11 @@ const Toolbox = () => {
                           {skill}
                         </span>
                       ))}
+                    </div>
+                    
+                    {/* Click indicator */}
+                    <div className="absolute top-4 right-4 opacity-60 hover:opacity-100 smooth-transition">
+                      <Icon name="ExternalLink" size={16} className="text-accent" />
                     </div>
                   </div>
                 ))}
@@ -487,7 +510,30 @@ const Toolbox = () => {
           )}
         </div>
       </section>
-
+      {/* Hover Tooltip */}
+      {hoveredCard && (
+        <div
+          className="fixed z-50 max-w-md p-4 bg-card border border-border rounded-lg brand-shadow pointer-events-none"
+          style={{
+            left: tooltipPosition?.x + 10,
+            top: tooltipPosition?.y - 10,
+            transform: 'translateY(-100%)'
+          }}
+        >
+          <div className="text-sm text-card-foreground leading-relaxed">
+            <div className="font-semibold text-accent mb-2">
+              {coreStrengths?.find(s => s?.id === hoveredCard)?.title}
+            </div>
+            <div className="text-muted-foreground">
+              {coreStrengths?.find(s => s?.id === hoveredCard)?.hoverDescription}
+            </div>
+            <div className="flex items-center space-x-1 mt-2 text-accent text-xs font-medium">
+              <Icon name="MousePointer2" size={12} />
+              <span>Click to view case study</span>
+            </div>
+          </div>
+        </div>
+      )}
       {/* Bio Modal */}
       {showBioModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-background/80 backdrop-blur-sm">
@@ -569,7 +615,6 @@ const Toolbox = () => {
           </div>
         </div>
       )}
-
       {/* Footer */}
       <footer className="bg-card border-t border-border py-12 px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
@@ -616,7 +661,7 @@ const Toolbox = () => {
                   href="https://linkedin.com/in/jacobdarling"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center text-muted-foreground hover:text-accent hover:bg-accent/10 smooth-transition"
+                  className="w-12 h-12 bg-muted rounded-lg flex items-center justify-center text-muted-foreground hover:text-accent hover:bg-accent/10 hover:scale-105 smooth-transition"
                 >
                   <Icon name="Linkedin" size={20} />
                 </a>
@@ -624,13 +669,13 @@ const Toolbox = () => {
                   href="https://github.com/jacobdarling"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center text-muted-foreground hover:text-accent hover:bg-accent/10 smooth-transition"
+                  className="w-12 h-12 bg-muted rounded-lg flex items-center justify-center text-muted-foreground hover:text-accent hover:bg-accent/10 hover:scale-105 smooth-transition"
                 >
                   <Icon name="Github" size={20} />
                 </a>
                 <a
                   href="mailto:jacob@example.com"
-                  className="w-10 h-10 bg-muted rounded-lg flex items-center justify-center text-muted-foreground hover:text-accent hover:bg-accent/10 smooth-transition"
+                  className="w-12 h-12 bg-muted rounded-lg flex items-center justify-center text-muted-foreground hover:text-accent hover:bg-accent/10 hover:scale-105 smooth-transition"
                 >
                   <Icon name="Mail" size={20} />
                 </a>

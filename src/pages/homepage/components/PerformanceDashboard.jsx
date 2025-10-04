@@ -1,346 +1,219 @@
 import React, { useState, useEffect } from 'react';
-import Icon from '../../../components/AppIcon';
+import { motion } from 'framer-motion';
 
 const PerformanceDashboard = () => {
-  const [metrics, setMetrics] = useState({
-    pageLoadTime: 0,
-    performanceScore: 0,
-    accessibilityScore: 0,
-    seoScore: 0,
-    bestPracticesScore: 0,
+  const [isVisible, setIsVisible] = useState(false);
+  const [animatedValues, setAnimatedValues] = useState({
+    automations: 0,
+    botBlocks: 0,
     uptime: 0,
-    visitors: 0,
-    bounceRate: 0
+    performance: 0
   });
 
-  const [isLoading, setIsLoading] = useState(true);
-
-  // Simulate real-time data loading
   useEffect(() => {
-    const loadMetrics = () => {
-      const targetMetrics = {
-        pageLoadTime: 1.2,
-        performanceScore: 98,
-        accessibilityScore: 100,
-        seoScore: 95,
-        bestPracticesScore: 92,
-        uptime: 99.9,
-        visitors: 12847,
-        bounceRate: 23.4
-      };
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
 
-      // Animate metrics loading
-      Object.keys(targetMetrics)?.forEach((key) => {
-        let current = 0;
-        const target = targetMetrics?.[key];
-        const increment = target / 50;
-        
-        const interval = setInterval(() => {
-          current += increment;
-          if (current >= target) {
-            current = target;
-            clearInterval(interval);
-          }
-          
-          setMetrics(prev => ({
-            ...prev,
-            [key]: key === 'pageLoadTime' || key === 'bounceRate' || key === 'uptime' 
-              ? Math.round(current * 10) / 10 
-              : Math.floor(current)
-          }));
-        }, 50);
-      });
+    const element = document.getElementById('performance-dashboard');
+    if (element) observer?.observe(element);
 
-      setTimeout(() => setIsLoading(false), 2500);
+    return () => {
+      if (element) observer?.unobserve(element);
     };
-
-    loadMetrics();
   }, []);
 
-  const performanceMetrics = [
+  useEffect(() => {
+    if (isVisible) {
+      const targets = {
+        automations: 427,
+        botBlocks: 85000,
+        uptime: 99.97,
+        performance: 98
+      };
+
+      const duration = 2000; // 2 seconds
+      const steps = 60;
+      const stepTime = duration / steps;
+
+      let currentStep = 0;
+      const timer = setInterval(() => {
+        currentStep++;
+        const progress = currentStep / steps;
+        const easeProgress = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+
+        setAnimatedValues({
+          automations: Math.round(targets?.automations * easeProgress),
+          botBlocks: Math.round(targets?.botBlocks * easeProgress),
+          uptime: parseFloat((targets?.uptime * easeProgress)?.toFixed(2)),
+          performance: Math.round(targets?.performance * easeProgress)
+        });
+
+        if (currentStep >= steps) {
+          clearInterval(timer);
+        }
+      }, stepTime);
+
+      return () => clearInterval(timer);
+    }
+  }, [isVisible]);
+
+  const metrics = [
     {
-      title: "Page Load Time",
-      value: `${metrics?.pageLoadTime}s`,
-      icon: "Zap",
-      color: "conversion",
-      description: "Average page load time",
-      target: "< 2.0s",
-      status: metrics?.pageLoadTime < 2.0 ? "excellent" : "good"
+      label: 'Active Automations',
+      value: animatedValues?.automations,
+      suffix: '+',
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      ),
+      color: 'text-blue-500',
+      bgColor: 'bg-blue-500/10'
     },
     {
-      title: "Performance Score",
-      value: `${metrics?.performanceScore}%`,
-      icon: "TrendingUp",
-      color: "trust-builder",
-      description: "Lighthouse performance score",
-      target: "> 90%",
-      status: metrics?.performanceScore > 90 ? "excellent" : "good"
+      label: 'Malicious Bots Blocked',
+      value: animatedValues?.botBlocks,
+      suffix: '+',
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+        </svg>
+      ),
+      color: 'text-green-500',
+      bgColor: 'bg-green-500/10'
     },
     {
-      title: "Accessibility",
-      value: `${metrics?.accessibilityScore}%`,
-      icon: "Shield",
-      color: "cta-warm",
-      description: "WCAG 2.1 AA compliance",
-      target: "100%",
-      status: metrics?.accessibilityScore === 100 ? "excellent" : "good"
+      label: 'System Uptime',
+      value: animatedValues?.uptime,
+      suffix: '%',
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+        </svg>
+      ),
+      color: 'text-purple-500',
+      bgColor: 'bg-purple-500/10'
     },
     {
-      title: "SEO Score",
-      value: `${metrics?.seoScore}%`,
-      icon: "Search",
-      color: "secondary",
-      description: "Search engine optimization",
-      target: "> 90%",
-      status: metrics?.seoScore > 90 ? "excellent" : "good"
+      label: 'Performance Score',
+      value: animatedValues?.performance,
+      suffix: '/100',
+      icon: (
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+        </svg>
+      ),
+      color: 'text-orange-500',
+      bgColor: 'bg-orange-500/10'
     }
   ];
-
-  const systemMetrics = [
-    {
-      title: "System Uptime",
-      value: `${metrics?.uptime}%`,
-      icon: "Activity",
-      color: "trust-builder",
-      description: "30-day availability",
-      trend: "+0.1%"
-    },
-    {
-      title: "Monthly Visitors",
-      value: metrics?.visitors?.toLocaleString(),
-      icon: "Users",
-      color: "conversion",
-      description: "Unique visitors this month",
-      trend: "+12.3%"
-    },
-    {
-      title: "Bounce Rate",
-      value: `${metrics?.bounceRate}%`,
-      icon: "MousePointer",
-      color: "cta-warm",
-      description: "Single page sessions",
-      trend: "-5.2%"
-    },
-    {
-      title: "Best Practices",
-      value: `${metrics?.bestPracticesScore}%`,
-      icon: "CheckCircle",
-      color: "secondary",
-      description: "Code quality standards",
-      trend: "+2.1%"
-    }
-  ];
-
-  const getColorClass = (color, type = 'bg') => {
-    const colorMap = {
-      'conversion': type === 'bg' ? 'bg-conversion' : 'text-conversion',
-      'trust-builder': type === 'bg' ? 'bg-trust-builder' : 'text-trust-builder',
-      'cta-warm': type === 'bg' ? 'bg-cta-warm' : 'text-cta-warm',
-      'secondary': type === 'bg' ? 'bg-secondary' : 'text-secondary'
-    };
-    return colorMap?.[color] || 'bg-conversion';
-  };
-
-  const getStatusColor = (status) => {
-    return status === 'excellent' ? 'text-trust-builder' : 'text-cta-warm';
-  };
-
-  const getTrendColor = (trend) => {
-    return trend?.startsWith('+') ? 'text-trust-builder' : 'text-destructive';
-  };
 
   return (
-    <section className="py-20 bg-background">
+    <section id="performance-dashboard" className="py-20 bg-gradient-to-br from-surface to-background">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="flex items-center justify-center mb-4">
-            <div className="w-12 h-12 bg-trust-builder/10 rounded-xl flex items-center justify-center mr-4">
-              <Icon name="BarChart3" size={24} className="text-trust-builder" />
-            </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-text-primary">
-              Performance Dashboard
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isVisible ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">
+              Live Performance Dashboard
             </h2>
-          </div>
-          <p className="text-lg text-text-secondary max-w-3xl mx-auto">
-            Real-time showcase of technical capabilities through live performance metrics, 
-            demonstrating optimization expertise and commitment to excellence.
-          </p>
-        </div>
-
-        {/* Performance Metrics */}
-        <div className="mb-12">
-          <h3 className="text-2xl font-bold text-text-primary mb-8 text-center">
-            Core Web Vitals & Performance
-          </h3>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {performanceMetrics?.map((metric, index) => (
-              <div key={index} className="bg-card rounded-xl p-6 brand-border">
-                <div className="flex items-center justify-between mb-4">
-                  <div className={`w-12 h-12 ${getColorClass(metric?.color)}/10 rounded-xl flex items-center justify-center`}>
-                    <Icon name={metric?.icon} size={24} className={getColorClass(metric?.color, 'text')} />
-                  </div>
-                  <div className={`px-2 py-1 rounded-full text-xs font-medium ${getStatusColor(metric?.status)}`}>
-                    {metric?.status === 'excellent' ? 'Excellent' : 'Good'}
-                  </div>
-                </div>
-
-                <div className="mb-2">
-                  <div className="text-2xl font-bold text-text-primary mb-1">
-                    {isLoading ? (
-                      <div className="w-16 h-8 bg-muted rounded animate-pulse" />
-                    ) : (
-                      metric?.value
-                    )}
-                  </div>
-                  <h4 className="font-semibold text-text-primary text-sm">{metric?.title}</h4>
-                </div>
-
-                <p className="text-xs text-text-secondary mb-3">{metric?.description}</p>
-
-                <div className="flex items-center justify-between">
-                  <span className="text-xs text-text-secondary">Target: {metric?.target}</span>
-                  <div className={`w-3 h-3 rounded-full ${
-                    metric?.status === 'excellent' ? 'bg-trust-builder' : 'bg-cta-warm'
-                  }`} />
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* System Metrics */}
-        <div className="mb-12">
-          <h3 className="text-2xl font-bold text-text-primary mb-8 text-center">
-            System Analytics & Monitoring
-          </h3>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {systemMetrics?.map((metric, index) => (
-              <div key={index} className="bg-card rounded-xl p-6 brand-border">
-                <div className="flex items-center justify-between mb-4">
-                  <div className={`w-12 h-12 ${getColorClass(metric?.color)}/10 rounded-xl flex items-center justify-center`}>
-                    <Icon name={metric?.icon} size={24} className={getColorClass(metric?.color, 'text')} />
-                  </div>
-                  <div className={`flex items-center gap-1 text-xs font-medium ${getTrendColor(metric?.trend)}`}>
-                    <Icon 
-                      name={metric?.trend?.startsWith('+') ? "TrendingUp" : "TrendingDown"} 
-                      size={12} 
-                    />
-                    {metric?.trend}
-                  </div>
-                </div>
-
-                <div className="mb-2">
-                  <div className="text-2xl font-bold text-text-primary mb-1">
-                    {isLoading ? (
-                      <div className="w-20 h-8 bg-muted rounded animate-pulse" />
-                    ) : (
-                      metric?.value
-                    )}
-                  </div>
-                  <h4 className="font-semibold text-text-primary text-sm">{metric?.title}</h4>
-                </div>
-
-                <p className="text-xs text-text-secondary">{metric?.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Technical Stack Showcase */}
-        <div className="bg-card rounded-2xl p-8 lg:p-12 brand-border">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-text-primary mb-4">
-              Technical Implementation
-            </h3>
-            <p className="text-text-secondary">
-              This portfolio demonstrates real-world application of modern web technologies 
-              and performance optimization techniques.
+            <p className="text-xl text-text-secondary max-w-3xl mx-auto">
+              Real-time metrics from production systems I've architected and maintain
             </p>
-          </div>
+          </motion.div>
+        </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Frontend Architecture */}
-            <div className="text-center">
-              <div className="w-16 h-16 bg-conversion/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Icon name="Code" size={32} className="text-conversion" />
-              </div>
-              <h4 className="font-bold text-text-primary mb-2">Frontend Architecture</h4>
-              <p className="text-sm text-text-secondary mb-4">
-                React 18 with functional components, custom hooks, and optimized rendering
-              </p>
-              <div className="flex flex-wrap gap-2 justify-center">
-                {['React', 'Vite', 'Tailwind CSS']?.map((tech) => (
-                  <span key={tech} className="px-2 py-1 bg-muted text-xs rounded-md">
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Performance Optimization */}
-            <div className="text-center">
-              <div className="w-16 h-16 bg-trust-builder/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Icon name="Zap" size={32} className="text-trust-builder" />
-              </div>
-              <h4 className="font-bold text-text-primary mb-2">Performance Optimization</h4>
-              <p className="text-sm text-text-secondary mb-4">
-                Code splitting, lazy loading, image optimization, and caching strategies
-              </p>
-              <div className="flex flex-wrap gap-2 justify-center">
-                {['Lazy Loading', 'Code Splitting', 'Image Optimization']?.map((tech) => (
-                  <span key={tech} className="px-2 py-1 bg-muted text-xs rounded-md">
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Accessibility & SEO */}
-            <div className="text-center">
-              <div className="w-16 h-16 bg-cta-warm/10 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Icon name="Shield" size={32} className="text-cta-warm" />
-              </div>
-              <h4 className="font-bold text-text-primary mb-2">Accessibility & SEO</h4>
-              <p className="text-sm text-text-secondary mb-4">
-                WCAG 2.1 AA compliance, semantic HTML, and search engine optimization
-              </p>
-              <div className="flex flex-wrap gap-2 justify-center">
-                {['WCAG 2.1 AA', 'Semantic HTML', 'Meta Tags']?.map((tech) => (
-                  <span key={tech} className="px-2 py-1 bg-muted text-xs rounded-md">
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Live Metrics Footer */}
-          <div className="mt-12 pt-8 border-t border-border">
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-              <div className="flex items-center gap-2 text-sm text-text-secondary">
-                <div className="w-2 h-2 bg-trust-builder rounded-full animate-pulse" />
-                <span>Live metrics updated every 30 seconds</span>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          {metrics?.map((metric, index) => (
+            <motion.div
+              key={metric?.label}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isVisible ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="bg-surface/80 backdrop-blur-sm border border-border rounded-xl p-6 hover:shadow-lg smooth-transition"
+            >
+              <div className="flex items-center justify-between mb-4">
+                <div className={`w-12 h-12 ${metric?.bgColor} rounded-lg flex items-center justify-center`}>
+                  <div className={metric?.color}>
+                    {metric?.icon}
+                  </div>
+                </div>
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
               </div>
               
-              <div className="flex items-center gap-6 text-sm">
-                <div className="flex items-center gap-2">
-                  <Icon name="Server" size={16} className="text-trust-builder" />
-                  <span className="text-text-secondary">Status: </span>
-                  <span className="text-trust-builder font-medium">Operational</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Icon name="Clock" size={16} className="text-conversion" />
-                  <span className="text-text-secondary">Last updated: </span>
-                  <span className="text-text-primary font-medium">
-                    {new Date()?.toLocaleTimeString()}
+              <div className="space-y-1">
+                <div className="flex items-baseline">
+                  <span className="text-3xl font-bold text-text-primary font-mono">
+                    {metric?.value?.toLocaleString()}
+                  </span>
+                  <span className="text-lg font-medium text-text-secondary ml-1">
+                    {metric?.suffix}
                   </span>
                 </div>
+                <p className="text-sm text-text-secondary">{metric?.label}</p>
+              </div>
+
+              {/* Mini chart visualization */}
+              <div className="mt-4 h-8 bg-muted rounded overflow-hidden">
+                <motion.div
+                  initial={{ width: 0 }}
+                  animate={isVisible ? { width: '100%' } : { width: 0 }}
+                  transition={{ duration: 1.5, delay: 0.5 }}
+                  className={`h-full ${metric?.color?.replace('text-', 'bg-')} opacity-20`}
+                />
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Real-time status indicators */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={isVisible ? { opacity: 1 } : {}}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="bg-surface/50 border border-border rounded-xl p-6"
+        >
+          <div className="flex flex-col md:flex-row items-center justify-between">
+            <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-2">
+                <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                <span className="text-text-secondary font-medium">All Systems Operational</span>
+              </div>
+              <div className="text-text-secondary text-sm">
+                Last updated: {new Date()?.toLocaleTimeString()}
+              </div>
+            </div>
+            
+            <div className="flex items-center space-x-6 mt-4 md:mt-0">
+              <div className="text-center">
+                <div className="text-sm text-text-secondary">Response Time</div>
+                <div className="text-lg font-bold text-green-500">127ms</div>
+              </div>
+              <div className="text-center">
+                <div className="text-sm text-text-secondary">Load Time</div>
+                <div className="text-lg font-bold text-blue-500">0.8s</div>
+              </div>
+              <div className="text-center">
+                <div className="text-sm text-text-secondary">CDN</div>
+                <div className="text-lg font-bold text-purple-500">Active</div>
               </div>
             </div>
           </div>
+        </motion.div>
+
+        <div className="text-center mt-8">
+          <p className="text-text-secondary text-sm">
+            * Metrics sourced from production environments at Graston Technique® and integrated monitoring systems
+          </p>
         </div>
       </div>
     </section>

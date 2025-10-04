@@ -67,6 +67,30 @@ const CredibilityBar = () => {
             </div>
           </div>
         </div>
+
+        {/* Strategic Partners */}
+        <div className="mt-16">
+          <div className="text-center mb-8">
+            <h3 className="text-lg font-semibold text-text-primary mb-2">Current Role & Strategic Partnerships</h3>
+            <p className="text-text-secondary">Healthcare marketing innovation and transformation leadership</p>
+          </div>
+          <div className="flex justify-center items-center space-x-8 opacity-70 hover:opacity-100 transition-opacity duration-300">
+            <div className="bg-white rounded-lg p-4 shadow-sm border border-border hover:shadow-md transition-shadow duration-300">
+              <img 
+                src="/assets/images/GT_Logo_RGB-1759610986907.png"
+                alt="Graston Technique® - Current Role as Marketing Director & Systems Architect"
+                className="h-12 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+              />
+            </div>
+            <div className="bg-white rounded-lg p-4 shadow-sm border border-border hover:shadow-md transition-shadow duration-300">
+              <img 
+                src="/assets/images/Primary_Care_Logo-1759610860809.png"
+                alt="Primary Care Indy - Healthcare Marketing Partner"
+                className="h-12 object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

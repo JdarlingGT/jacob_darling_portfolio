@@ -8,6 +8,8 @@ import Resume from './pages/resume';
 import ContactPage from './pages/contact';
 import Projects from './pages/projects';
 import AboutPage from './pages/about';
+import AboutMePage from './pages/about-me';
+import AchievementsPage from './pages/achievements';
 import CaseStudies from './pages/case-studies';
 import Homepage from './pages/homepage';
 import CaseStudyDetail from './pages/case-study-detail';
@@ -29,6 +31,8 @@ const Routes = () => {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/about" element={<AboutPage />} />
+        <Route path="/about-me" element={<AboutMePage />} />
+        <Route path="/achievements" element={<AchievementsPage />} />
         <Route path="/case-studies" element={<CaseStudies />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/case-studies/:slug" element={<CaseStudyDetail />} />

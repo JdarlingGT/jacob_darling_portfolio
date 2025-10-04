@@ -10,6 +10,7 @@ const ExperienceSection = () => {
       location: "Indianapolis, IN",
       duration: "Aug 2023 – Present",
       type: "Full-time",
+      logo: "/assets/images/GT_Logo_RGB-1759610986907.png",
       achievements: [
         "Led a full-stack digital transformation for a national healthcare education platform, operating as both brand strategist and systems architect to build a scalable marketing ecosystem from the ground up",
         "Automation & AI: Architected a 'Guardian' AI assistant and over 400 automated workflows, reducing manual data entry by hours per week and decreasing support tickets by 70%",
@@ -101,14 +102,31 @@ const ExperienceSection = () => {
             <div className="ml-16">
               <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-4">
                 <div>
-                  <h3 className="text-xl font-semibold text-text-primary mb-1">{exp?.title}</h3>
-                  <div className="flex items-center space-x-4 text-text-secondary mb-2">
-                    <span className="font-medium">{exp?.company}</span>
-                    <span className="flex items-center space-x-1">
-                      <Icon name="MapPin" size={14} />
-                      <span>{exp?.location}</span>
-                    </span>
-                    <span className="px-2 py-1 bg-muted rounded text-xs">{exp?.type}</span>
+                  <div className="flex items-start space-x-3 mb-3">
+                    {exp?.logo ? (
+                      <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center flex-shrink-0 p-2 border border-border">
+                        <img 
+                          src={exp?.logo}
+                          alt={`${exp?.company} logo`}
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                    ) : (
+                      <div className="w-12 h-12 bg-conversion/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <Icon name="Briefcase" size={20} className="text-conversion" />
+                      </div>
+                    )}
+                    <div>
+                      <h3 className="text-xl font-semibold text-text-primary mb-1">{exp?.title}</h3>
+                      <div className="flex items-center space-x-4 text-text-secondary mb-2">
+                        <span className="font-medium">{exp?.company}</span>
+                        <span className="flex items-center space-x-1">
+                          <Icon name="MapPin" size={14} />
+                          <span>{exp?.location}</span>
+                        </span>
+                        <span className="px-2 py-1 bg-muted rounded text-xs">{exp?.type}</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div className="flex items-center space-x-2 text-text-secondary">

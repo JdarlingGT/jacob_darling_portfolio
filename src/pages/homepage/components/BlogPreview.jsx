@@ -1,300 +1,273 @@
-import React from 'react';
-import Icon from '../../../components/AppIcon';
-import Image from '../../../components/AppImage';
-import Button from '../../../components/ui/Button';
+import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 const BlogPreview = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState('all');
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setIsVisible(true);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    const element = document.getElementById('blog-preview');
+    if (element) observer?.observe(element);
+
+    return () => {
+      if (element) observer?.unobserve(element);
+    };
+  }, []);
+
   const blogPosts = [
     {
       id: 1,
-      title: "Building Scalable Marketing Automation with React and Node.js",
-      excerpt: `A deep dive into architecting marketing automation platforms that can handle enterprise-scale traffic while maintaining performance and reliability.\n\nLearn about microservices architecture, real-time event processing, and API design patterns that power modern marketing technology stacks.`,
-      category: "Technical Architecture",
-      readTime: "8 min read",
-      publishDate: "2024-09-25",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop",
-      tags: ["React", "Node.js", "Marketing Automation", "Microservices"],
-      views: 2847,
-      likes: 156,
-      featured: true
+      title: 'The Integration Gap: Why Marketing Ideas Break at Handoff',
+      excerpt: 'Most marketing campaigns fail not because of poor strategy, but because of poor execution. Here\'s how to bridge the gap between creative vision and technical reality.',
+      category: 'strategy',
+      readTime: '8 min read',
+      publishDate: '3 days ago',
+      tags: ['Marketing Strategy', 'Project Management', 'Integration'],
+      image: '/assets/images/Evidence-Based_Approach_Infographic-1759119540923.png',
+      trending: true
     },
     {
       id: 2,
-      title: "AI-Powered Customer Journey Analytics: Implementation Guide",
-      excerpt: `Step-by-step guide to implementing machine learning algorithms for customer journey analysis and behavior prediction.\n\nCover data collection strategies, model training, and real-time inference systems for marketing optimization.`,
-      category: "AI & Machine Learning",
-      readTime: "12 min read",
-      publishDate: "2024-09-20",
-      image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=250&fit=crop",
-      tags: ["AI", "Machine Learning", "Customer Analytics", "Python"],
-      views: 1923,
-      likes: 89,
-      featured: false
+      title: 'Building a 400+ Automation Marketing Stack',
+      excerpt: 'A deep dive into architecting an enterprise marketing automation system that processes 50,000+ leads monthly while maintaining 99.97% uptime.',
+      category: 'technical',
+      readTime: '12 min read',
+      publishDate: '1 week ago',
+      tags: ['Marketing Automation', 'CRM', 'Systems Architecture'],
+      image: '/assets/images/edge-image-optimization-pipeline-hero-1759121621363.png',
+      featured: true
     },
     {
       id: 3,
-      title: "Performance Optimization for Marketing Technology Platforms",
-      excerpt: `Best practices for optimizing marketing technology platforms for speed, scalability, and user experience.\n\nExplore caching strategies, database optimization, CDN implementation, and monitoring techniques.`,
-      category: "Performance",
-      readTime: "6 min read",
-      publishDate: "2024-09-15",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop",
-      tags: ["Performance", "Optimization", "Caching", "Monitoring"],
-      views: 1456,
-      likes: 73,
-      featured: false
+      title: 'From 85,000 Bot Attacks to Zero: A Security Case Study',
+      excerpt: 'How I implemented a multi-layer security infrastructure that neutralizes malicious traffic while maintaining optimal performance and user experience.',
+      category: 'technical',
+      readTime: '10 min read',
+      publishDate: '2 weeks ago',
+      tags: ['Security', 'Performance', 'Infrastructure'],
+      image: '/assets/images/ChatGPT_Image_Sep_29_2025_12_16_05_AM-1759119580701.png',
+      popular: true
+    },
+    {
+      id: 4,
+      title: 'The Psychology of High-Converting Checkout Flows',
+      excerpt: 'Behavioral economics principles that drove a 40% increase in e-commerce conversions through strategic UX improvements and psychological triggers.',
+      category: 'conversion',
+      readTime: '7 min read',
+      publishDate: '3 weeks ago',
+      tags: ['Conversion Optimization', 'UX Design', 'Psychology'],
+      image: '/assets/images/Gemini_Generated_Image_klonsaklonsaklon-1759116279741.png'
+    },
+    {
+      id: 5,
+      title: 'Marketing Attribution in a Privacy-First World',
+      excerpt: 'Practical strategies for tracking marketing performance and attribution while respecting user privacy and complying with modern data regulations.',
+      category: 'analytics',
+      readTime: '9 min read',
+      publishDate: '1 month ago',
+      tags: ['Analytics', 'Privacy', 'Attribution'],
+      image: '/assets/images/Gemini_Generated_Image_6zxf7o6zxf7o6zxf-1759117577100.png'
+    },
+    {
+      id: 6,
+      title: 'Scaling Content Operations with AI and Automation',
+      excerpt: 'How to augment your content team with intelligent automation while maintaining quality and brand voice across all marketing channels.',
+      category: 'strategy',
+      readTime: '6 min read',
+      publishDate: '1 month ago',
+      tags: ['Content Strategy', 'AI', 'Automation'],
+      image: '/assets/images/INterview-22-1759117511113.jpg'
     }
   ];
 
-  const handleReadMore = (postId) => {
-    window.location.href = `/blog/${postId}`;
-  };
+  const categories = [
+    { id: 'all', name: 'All Posts', count: blogPosts?.length },
+    { id: 'strategy', name: 'Strategy', count: blogPosts?.filter(post => post?.category === 'strategy')?.length },
+    { id: 'technical', name: 'Technical', count: blogPosts?.filter(post => post?.category === 'technical')?.length },
+    { id: 'conversion', name: 'Conversion', count: blogPosts?.filter(post => post?.category === 'conversion')?.length },
+    { id: 'analytics', name: 'Analytics', count: blogPosts?.filter(post => post?.category === 'analytics')?.length }
+  ];
 
-  const handleViewAllPosts = () => {
-    window.location.href = '/blog';
-  };
-
-  const formatDate = (dateString) => {
-    const date = new Date(dateString);
-    return date?.toLocaleDateString('en-US', { 
-      year: 'numeric', 
-      month: 'long', 
-      day: 'numeric' 
-    });
-  };
+  const filteredPosts = selectedCategory === 'all' 
+    ? blogPosts 
+    : blogPosts?.filter(post => post?.category === selectedCategory);
 
   return (
-    <section className="py-20 bg-background">
+    <section id="blog-preview" className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="flex items-center justify-center mb-4">
-            <div className="w-12 h-12 bg-cta-warm/10 rounded-xl flex items-center justify-center mr-4">
-              <Icon name="BookOpen" size={24} className="text-cta-warm" />
-            </div>
-            <h2 className="text-3xl lg:text-4xl font-bold text-text-primary">
-              Latest Insights
-            </h2>
-          </div>
-          <p className="text-lg text-text-secondary max-w-3xl mx-auto">
-            Technical insights, marketing automation strategies, and thought leadership content 
-            from the intersection of marketing and technology.
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">
+            Thought Leadership & Insights
+          </h2>
+          <p className="text-xl text-text-secondary max-w-3xl mx-auto">
+            Deep dives into marketing strategy, technical implementation, and the intersection where great ideas become scalable systems
           </p>
-        </div>
+        </motion.div>
 
-        {/* Featured Post */}
-        <div className="mb-16">
-          <div className="bg-card rounded-2xl overflow-hidden brand-border brand-shadow">
-            <div className="grid lg:grid-cols-2 gap-0">
-              {/* Image */}
-              <div className="relative h-64 lg:h-auto">
-                <Image
-                  src={blogPosts?.[0]?.image}
-                  alt={blogPosts?.[0]?.title}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 bg-conversion text-conversion-foreground text-sm font-medium rounded-full">
-                    Featured
-                  </span>
-                </div>
-              </div>
+        {/* Category Filter */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="flex flex-wrap justify-center gap-4 mb-12"
+        >
+          {categories?.map((category) => (
+            <button
+              key={category?.id}
+              onClick={() => setSelectedCategory(category?.id)}
+              className={`px-4 py-2 rounded-full text-sm font-medium smooth-transition ${
+                selectedCategory === category?.id
+                  ? 'bg-conversion text-conversion-foreground'
+                  : 'bg-surface text-text-secondary hover:bg-conversion/10 hover:text-conversion'
+              }`}
+            >
+              {category?.name} ({category?.count})
+            </button>
+          ))}
+        </motion.div>
 
-              {/* Content */}
-              <div className="p-8 lg:p-12">
-                <div className="flex items-center gap-4 mb-4">
-                  <span className="px-3 py-1 bg-cta-warm/10 text-cta-warm text-sm font-medium rounded-full">
-                    {blogPosts?.[0]?.category}
-                  </span>
-                  <span className="text-text-secondary text-sm">
-                    {formatDate(blogPosts?.[0]?.publishDate)}
-                  </span>
-                </div>
-
-                <h3 className="text-2xl lg:text-3xl font-bold text-text-primary mb-4">
-                  {blogPosts?.[0]?.title}
-                </h3>
-
-                <p className="text-text-secondary leading-relaxed mb-6 whitespace-pre-line">
-                  {blogPosts?.[0]?.excerpt}
-                </p>
-
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {blogPosts?.[0]?.tags?.map((tag, index) => (
-                    <span 
-                      key={index}
-                      className="px-2 py-1 bg-muted text-text-secondary text-xs rounded-md"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Meta Info */}
-                <div className="flex items-center justify-between mb-6">
-                  <div className="flex items-center gap-4 text-sm text-text-secondary">
-                    <div className="flex items-center gap-1">
-                      <Icon name="Clock" size={16} />
-                      <span>{blogPosts?.[0]?.readTime}</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Icon name="Eye" size={16} />
-                      <span>{blogPosts?.[0]?.views?.toLocaleString()} views</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Icon name="Heart" size={16} />
-                      <span>{blogPosts?.[0]?.likes} likes</span>
-                    </div>
-                  </div>
-                </div>
-
-                <Button
-                  variant="default"
-                  onClick={() => handleReadMore(blogPosts?.[0]?.id)}
-                  className="bg-conversion hover:bg-conversion/90 text-conversion-foreground"
-                  iconName="ArrowRight"
-                  iconPosition="right"
-                  iconSize={16}
-                >
-                  Read Full Article
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Recent Posts Grid */}
-        <div className="grid md:grid-cols-2 gap-8 mb-12">
-          {blogPosts?.slice(1)?.map((post) => (
-            <article key={post?.id} className="bg-card rounded-xl overflow-hidden brand-border hover:brand-shadow smooth-transition">
-              {/* Image */}
-              <div className="relative h-48">
-                <Image
+        {/* Blog Posts Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredPosts?.slice(0, 6)?.map((post, index) => (
+            <motion.article
+              key={post?.id}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isVisible ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.1 * index }}
+              className="bg-surface border border-border rounded-xl overflow-hidden hover:border-conversion/50 hover:shadow-lg smooth-transition group"
+            >
+              {/* Post Image */}
+              <div className="relative h-48 bg-muted overflow-hidden">
+                <img 
                   src={post?.image}
                   alt={post?.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover group-hover:scale-105 smooth-transition"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent" />
-              </div>
-
-              {/* Content */}
-              <div className="p-6">
-                <div className="flex items-center gap-4 mb-3">
-                  <span className="px-3 py-1 bg-secondary/10 text-secondary text-sm font-medium rounded-full">
-                    {post?.category}
-                  </span>
-                  <span className="text-text-secondary text-sm">
-                    {formatDate(post?.publishDate)}
-                  </span>
+                
+                {/* Badges */}
+                <div className="absolute top-4 left-4">
+                  {post?.trending && (
+                    <span className="px-2 py-1 bg-red-500/90 text-white text-xs font-medium rounded-full">
+                      Trending
+                    </span>
+                  )}
+                  {post?.featured && (
+                    <span className="px-2 py-1 bg-blue-500/90 text-white text-xs font-medium rounded-full">
+                      Featured
+                    </span>
+                  )}
+                  {post?.popular && (
+                    <span className="px-2 py-1 bg-purple-500/90 text-white text-xs font-medium rounded-full">
+                      Popular
+                    </span>
+                  )}
                 </div>
 
-                <h3 className="text-xl font-bold text-text-primary mb-3 line-clamp-2">
+                {/* Reading Time */}
+                <div className="absolute bottom-4 right-4">
+                  <span className="px-2 py-1 bg-black/70 text-white text-xs rounded-full">
+                    {post?.readTime}
+                  </span>
+                </div>
+              </div>
+
+              {/* Post Content */}
+              <div className="p-6">
+                <div className="flex items-center justify-between mb-3">
+                  <span className={`px-2 py-1 text-xs font-medium rounded-full ${
+                    post?.category === 'strategy' ? 'bg-green-100 text-green-700' :
+                    post?.category === 'technical' ? 'bg-blue-100 text-blue-700' :
+                    post?.category === 'conversion'? 'bg-purple-100 text-purple-700' : 'bg-orange-100 text-orange-700'
+                  }`}>
+                    {post?.category?.charAt(0)?.toUpperCase() + post?.category?.slice(1)}
+                  </span>
+                  <span className="text-text-secondary text-sm">{post?.publishDate}</span>
+                </div>
+
+                <h3 className="text-lg font-semibold text-text-primary mb-3 group-hover:text-conversion smooth-transition line-clamp-2">
                   {post?.title}
                 </h3>
 
-                <p className="text-text-secondary text-sm leading-relaxed mb-4 line-clamp-3 whitespace-pre-line">
+                <p className="text-text-secondary text-sm leading-relaxed mb-4 line-clamp-3">
                   {post?.excerpt}
                 </p>
 
                 {/* Tags */}
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {post?.tags?.slice(0, 3)?.map((tag, index) => (
-                    <span 
-                      key={index}
-                      className="px-2 py-1 bg-muted text-text-secondary text-xs rounded-md"
-                    >
+                  {post?.tags?.slice(0, 2)?.map((tag) => (
+                    <span key={tag} className="px-2 py-1 bg-muted text-text-secondary text-xs rounded">
                       {tag}
                     </span>
                   ))}
-                  {post?.tags?.length > 3 && (
-                    <span className="px-2 py-1 bg-muted text-text-secondary text-xs rounded-md">
-                      +{post?.tags?.length - 3} more
+                  {post?.tags?.length > 2 && (
+                    <span className="px-2 py-1 bg-muted text-text-secondary text-xs rounded">
+                      +{post?.tags?.length - 2} more
                     </span>
                   )}
                 </div>
 
-                {/* Meta Info */}
+                {/* Read More */}
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3 text-xs text-text-secondary">
-                    <div className="flex items-center gap-1">
-                      <Icon name="Clock" size={14} />
-                      <span>{post?.readTime}</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Icon name="Eye" size={14} />
-                      <span>{post?.views?.toLocaleString()}</span>
-                    </div>
+                  <button className="text-conversion hover:text-conversion/80 text-sm font-medium smooth-transition">
+                    Read Article →
+                  </button>
+                  <div className="flex items-center space-x-3">
+                    <button className="text-text-secondary hover:text-conversion smooth-transition">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                      </svg>
+                    </button>
+                    <button className="text-text-secondary hover:text-conversion smooth-transition">
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z" />
+                      </svg>
+                    </button>
                   </div>
-
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    onClick={() => handleReadMore(post?.id)}
-                    iconName="ArrowRight"
-                    iconPosition="right"
-                    iconSize={14}
-                  >
-                    Read More
-                  </Button>
                 </div>
               </div>
-            </article>
+            </motion.article>
           ))}
         </div>
 
-        {/* View All Button */}
-        <div className="text-center">
-          <Button
-            variant="outline"
-            size="lg"
-            onClick={handleViewAllPosts}
-            iconName="BookOpen"
-            iconPosition="left"
-            iconSize={20}
-          >
-            View All Blog Posts
-          </Button>
-        </div>
-
-        {/* Newsletter Signup */}
-        <div className="mt-16 bg-card rounded-2xl p-8 lg:p-12 brand-border text-center">
-          <div className="max-w-2xl mx-auto">
-            <div className="w-16 h-16 bg-conversion/10 rounded-xl flex items-center justify-center mx-auto mb-6">
-              <Icon name="Mail" size={32} className="text-conversion" />
-            </div>
-            
+        {/* View All Blog CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          className="text-center mt-12"
+        >
+          <div className="bg-gradient-to-r from-conversion/5 to-secondary/5 border border-conversion/20 rounded-xl p-8">
             <h3 className="text-2xl font-bold text-text-primary mb-4">
-              Stay Updated with Latest Insights
+              Want to Read More?
             </h3>
-            
-            <p className="text-text-secondary mb-8">
-              Get weekly insights on marketing technology, performance optimization, 
-              and strategic implementation directly in your inbox.
+            <p className="text-text-secondary mb-6 max-w-2xl mx-auto">
+              Get deeper insights into marketing strategy, technical implementation, 
+              and building scalable systems that drive real business results.
             </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email address"
-                className="flex-1 px-4 py-3 bg-muted border border-border rounded-lg text-text-primary placeholder-text-secondary focus:outline-none focus:ring-2 focus:ring-conversion"
-              />
-              <Button
-                variant="default"
-                className="bg-conversion hover:bg-conversion/90 text-conversion-foreground"
-                iconName="Send"
-                iconPosition="right"
-                iconSize={16}
-              >
-                Subscribe
-              </Button>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <button className="bg-conversion text-conversion-foreground px-6 py-3 rounded-lg font-medium hover:bg-conversion/90 smooth-transition">
+                View All Articles
+              </button>
+              <button className="border border-border text-text-primary px-6 py-3 rounded-lg font-medium hover:border-conversion hover:text-conversion smooth-transition">
+                Subscribe to Newsletter
+              </button>
             </div>
-
-            <p className="text-xs text-text-secondary mt-4">
-              No spam, unsubscribe at any time. Read our privacy policy.
-            </p>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
