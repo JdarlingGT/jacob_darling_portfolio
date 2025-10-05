@@ -6,7 +6,7 @@
     "baseUrl": "./",
     "paths": {
       "@/*": [
-        "./*"
+        "src/*"
       ]
     },
     "strict": true,
@@ -28,7 +28,8 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "types": ["react", "react-dom"]
   },
   "include": [
     "app",

@@ -27,7 +27,7 @@ async function getCaseStudy(slug: string): Promise<CaseStudy | null> {
 export async function generateStaticParams() {
   const caseStudiesDir = path.join(process.cwd(), 'content', 'case-studies')
   const files = fs.readdirSync(caseStudiesDir).filter(file => file.endsWith('.json'))
-  
+
   return files.map(file => ({
     slug: file.replace('.json', ''),
   }))
@@ -36,16 +36,16 @@ export async function generateStaticParams() {
 export default async function CaseStudyPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const study = await getCaseStudy(slug)
-  
+
   if (!study) {
     notFound()
   }
-  
+
   return (
     <div className="container mx-auto px-4 py-16">
       <h1 className="text-4xl font-bold mb-4">{study.title}</h1>
       <p className="text-xl text-muted-foreground mb-8">{study.description}</p>
-      
+
       <div className="mb-8">
         <Image
           src={study.heroImage}
@@ -55,20 +55,20 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
           className="rounded-lg"
         />
       </div>
-      
+
       <div className="flex flex-wrap gap-2 mb-8">
         {study.badges.map((badge) => (
           <span key={badge} className="badge">{badge}</span>
         ))}
       </div>
-      
+
       <h2 className="text-2xl font-semibold mb-4">Results</h2>
       <ul className="mb-8">
         {study.results.map((result, index) => (
           <li key={index} className="mb-2">• {result}</li>
         ))}
       </ul>
-      
+
       <div className="prose prose-invert max-w-none">
         <p>{study.content}</p>
       </div>

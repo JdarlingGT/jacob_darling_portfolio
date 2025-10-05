@@ -15,19 +15,19 @@ interface CaseStudy {
 async function getCaseStudies(): Promise<CaseStudy[]> {
   const caseStudiesDir = path.join(process.cwd(), 'content', 'case-studies')
   const files = fs.readdirSync(caseStudiesDir).filter(file => file.endsWith('.json'))
-  
+
   const caseStudies = files.map(file => {
     const filePath = path.join(caseStudiesDir, file)
     const content = fs.readFileSync(filePath, 'utf8')
     return JSON.parse(content) as CaseStudy
   })
-  
+
   return caseStudies
 }
 
 export default async function CaseStudiesPage() {
   const caseStudies = await getCaseStudies()
-  
+
   return (
     <div className="container mx-auto px-4 py-16">
       <h1 className="text-4xl font-bold mb-8">Case Studies</h1>
