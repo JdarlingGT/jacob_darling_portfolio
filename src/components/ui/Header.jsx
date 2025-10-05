@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Icon from '../AppIcon';
 import Button from './Button';
+import { useTheme } from '../../context/ThemeContext';
 
 const Header = ({ className = '' }) => {
+  
   const [isScrolled, setIsScrolled] = useState(false);
+    const { theme, toggleTheme } = useTheme();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -127,11 +130,19 @@ const Header = ({ className = '' }) => {
               >
                 Schedule Call
               </Button>
-            </div>
+      <Button
+        variant="ghost"
+        size="sm"
+        onClick={toggleTheme}
+        iconName={theme === 'dark' ? 'Sun' : 'Moon'}
+        iconPosition="left"
+      >
+        <span className="sr-only">Toggle theme</span>
+      </Button>
 
-            {/* Mobile Menu Button */}
-            <button
-              onClick={toggleMobileMenu}
+              
+            </div>
+        
               className="lg:hidden p-2 rounded-lg text-text-secondary hover:text-text-primary hover:bg-muted smooth-transition"
             >
               <Icon name={isMobileMenuOpen ? "X" : "Menu"} size={24} />
@@ -178,7 +189,18 @@ const Header = ({ className = '' }) => {
                   iconSize={16}
                 >
                   Schedule Call
-                </Button>
+       
+                        <Button
+          variant="ghost"
+          fullWidth
+          size="sm"
+          onClick={toggleTheme}
+          iconName={theme === 'dark' ? 'Sun' : 'Moon'}
+          iconPosition="left"
+        >
+          {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
+        </Button>
+</Button>
               </div>
             </div>
           </div>
