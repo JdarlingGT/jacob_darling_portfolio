@@ -1,0 +1,13 @@
+{
+  "slug": "provider-analytics",
+  "title": "Provider Analytics Dashboard",
+  "description": "Built a comprehensive analytics dashboard for healthcare providers to track patient engagement and operational metrics.",
+  "heroImage": "/case/provider-dashboard-1.png",
+  "badges": ["React", "Node.js", "PostgreSQL", "Chart.js"],
+  "results": [
+    "Increased patient engagement by 40%",
+    "Reduced operational costs by 25%",
+    "Improved data accuracy by 95%"
+  ],
+  "content": "Detailed case study content here..."
+}

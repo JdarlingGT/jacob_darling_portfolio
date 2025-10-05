@@ -1,0 +1,13 @@
+{
+  "slug": "training-credits",
+  "title": "Training Credits Platform",
+  "description": "Developed a platform for managing professional training credits and certifications.",
+  "heroImage": "/case/training-credits-1.png",
+  "badges": ["Vue.js", "Laravel", "MySQL", "AWS"],
+  "results": [
+    "Streamlined credit tracking process",
+    "Increased user satisfaction by 60%",
+    "Automated reporting reduced manual work by 80%"
+  ],
+  "content": "Detailed case study content here..."
+}

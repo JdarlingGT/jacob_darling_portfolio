@@ -40,10 +40,12 @@
     "d3": "^7.9.0",
     "date-fns": "^4.1.0",
     "dotenv": "^16.0.1",
-    "framer-motion": "^10.16.4",
+    "framer-motion": "^11.18.2",
     "lucide-react": "^0.484.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "next": "^15.5.4",
+    "next-themes": "^0.4.6",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-helmet": "^6.1.0",
     "react-hook-form": "^7.55.0",
     "react-router-dom": "6.0.2",
@@ -56,9 +58,10 @@
     "tailwindcss-fluid-type": "^2.0.7"
   },
   "scripts": {
-    "start": "vite",
-    "build": "vite build --sourcemap",
-    "serve": "vite preview"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "eslintConfig": {
     "extends": [
@@ -83,10 +86,13 @@
     "@tailwindcss/container-queries": "^0.1.1",
     "@tailwindcss/line-clamp": "^0.1.0",
     "@tailwindcss/typography": "^0.5.16",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
     "@vitejs/plugin-react": "4.3.4",
     "autoprefixer": "10.4.2",
     "postcss": "8.4.8",
     "tailwindcss": "3.4.6",
+    "typescript": "5.9.3",
     "vite": "5.0.0",
     "vite-tsconfig-paths": "3.6.0"
   }
